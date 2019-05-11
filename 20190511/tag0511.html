@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content=".hand { color: red; font-weight: 900; background-color: yellow;}  日記把ajax快速閱覽過一次了，後面提到 ajax順序">
+  <meta name="description" content="為 sidebar 開啟分類連結因為一直以來都是用 themes 資料夾外的 _config.yml 增加分類，但 sidebar 的分類連結一直沒通 (disabled 狀態)…所以今日來開通分類連結拉!">
 <meta name="keywords" content="javascript, html, css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tag0509 - 初探 ajax">
-<meta property="og:url" content="http://yoursite.com/blog/20190509/tag0509.html">
+<meta property="og:title" content="tag0511 - 為 sidebar 開啟分類連結">
+<meta property="og:url" content="http://yoursite.com/blog/20190511/tag0511.html">
 <meta property="og:site_name" content="測試中">
-<meta property="og:description" content=".hand { color: red; font-weight: 900; background-color: yellow;}  日記把ajax快速閱覽過一次了，後面提到 ajax順序">
+<meta property="og:description" content="為 sidebar 開啟分類連結因為一直以來都是用 themes 資料夾外的 _config.yml 增加分類，但 sidebar 的分類連結一直沒通 (disabled 狀態)…所以今日來開通分類連結拉!">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-11T10:38:20.107Z">
+<meta property="og:updated_time" content="2019-05-11T13:59:40.576Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tag0509 - 初探 ajax">
-<meta name="twitter:description" content=".hand { color: red; font-weight: 900; background-color: yellow;}  日記把ajax快速閱覽過一次了，後面提到 ajax順序">
+<meta name="twitter:title" content="tag0511 - 為 sidebar 開啟分類連結">
+<meta name="twitter:description" content="為 sidebar 開啟分類連結因為一直以來都是用 themes 資料夾外的 _config.yml 增加分類，但 sidebar 的分類連結一直沒通 (disabled 狀態)…所以今日來開通分類連結拉!">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/blog/20190509/tag0509">
+  <link rel="canonical" href="http://yoursite.com/blog/20190511/tag0511">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>tag0509 - 初探 ajax | 測試中</title>
+  <title>tag0511 - 為 sidebar 開啟分類連結 | 測試中</title>
   
 
 
@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/blog/20190509/tag0509.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/blog/20190511/tag0511.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kiwi z">
@@ -328,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">tag0509 - 初探 ajax
+          <h1 class="post-title" itemprop="name headline">tag0511 - 為 sidebar 開啟分類連結
 
               
             
@@ -354,24 +354,12 @@
                 
               
 
-              <time title="創建時間：2019-05-09 14:31:18" itemprop="dateCreated datePublished" datetime="2019-05-09T14:31:18+08:00">2019-05-09</time>
+              <time title="創建時間：2019-05-11 19:42:51 / 修改時間：21:59:40" itemprop="dateCreated datePublished" datetime="2019-05-11T19:42:51+08:00">2019-05-11</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新於</span>
-                
-                <time title="修改時間：2019-05-11 18:38:20" itemprop="dateModified" datetime="2019-05-11T18:38:20+08:00">2019-05-11</time>
               
             
           </span>
@@ -423,67 +411,15 @@
       
 
       
-        <p><style>.hand { color: red; font-weight: 900; background-color: yellow;} </style></p>
-<h2 id="日記"><a href="#日記" class="headerlink" title="日記"></a>日記</h2><h3 id="把ajax快速閱覽過一次了，後面提到-ajax順序"><a href="#把ajax快速閱覽過一次了，後面提到-ajax順序" class="headerlink" title="把ajax快速閱覽過一次了，後面提到 ajax順序"></a>把ajax快速閱覽過一次了，後面提到 ajax順序</h3><a id="more"></a>
-<ul>
-<li><p>ajax順序</p>
-<ol start="0">
-<li><strong>創建請求對象</strong><br>(從瀏覽器API new一個XMLHttpRequest())<br>書中還有做不同瀏覽器的請求判斷.. 如果是微軟舊的瀏覽器要 new 這個..(難怪有人這麼討厭xD)<br>new ActiveXObject(“Msxml2.XMLHTTP”)<br>new ActiveXObject(“Microsoft.XMLHTTP”)<br>→ </li>
-<li><span class="hand">☞</span> request = new XMLHttpRequest() &lt;- 存成全域變數，回調函數才可使用<br>請求對象的準備狀態，<br>存在 readyState 屬性中<br><strong>readyState: 0</strong><br><strong>連結尚未初始化</strong><br>→</li>
-<li><strong>回調函數</strong><br><span class="hand">☞</span> <strong>request.open(“GET”,url,true)</strong><br>————-如何連接?連去哪?同步(true)/異步(false)<br><strong>readyState: 1</strong><br><strong>連結初始化:請求已準備好可以發送</strong><br>→</li>
-<li><span class="hand">☞</span> <strong>request.send(null)</strong><br>(給伺服器)—–這邊設定伺服器回傳null<br><strong>readyState: 2</strong><br><strong>(伺服器正在處理請求)</strong><br>→</li>
-<li><strong>readyState: 3</strong><br><strong>(得到伺服器響應)</strong><br>數據下載到請求對象(瀏覽器)，但響應還沒完全準備好，還不能使用<br>→</li>
-<li><strong>readyState: 4</strong><br><strong>(伺服器響應準備就緒)</strong><br>伺服器處理完請求，數據可以使用了</li>
-</ol>
-<p>6.<span class="hand">☞</span> 利用<strong>request.onreadystatechange = function executeMe(){}</strong>每次readyState改變時就會執行這個指定的函數。<br>  可用 readyState 1.2.3.4 來在不同階段執行想設定執行的函數<br>  ex. 以 request.readyState ==4、request.status ===200 判斷式，來對已接收完成的資料作運用，然後<br>  <span class="hand">☞</span> <strong>request.responseText 取得回傳的文本</strong></p>
-<blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox"> .responseText 對沒接觸伺服器端過的我來說很抽象，待補坑。</li>
-</ul>
-</blockquote>
-<p>  <strong>XMLHttpRequest物件(對象)</strong></p>
-<blockquote>
-<p>的屬性有:readyState、responseXML、responsText、onreadystatechange、statusText、status<br>服務器響應會存在 <strong>responseText</strong> 中。通常是文本，不過也可以是XML數據。</p>
-</blockquote>
-</li>
-<li><p>事件處理程序(用addEventListener()DOM2中可為單個事件指定多個事件處理程序)</p>
-</li>
-<li><ul>
-<li style="list-style: none"><input type="checkbox"> 異步應用<blockquote>
-<p>有夠難，說了一個表單要異步2次，中間埋了一個監聽器函數、來確認異步伺服器回傳後是否都通過標準、最後submit送出鈕也發了一個同步請求，意味著資料送達伺服器前你都要等待完才能做別的事，這時怕太無聊他在<strong>同步請求前</strong>運行一個setInterval(撥放圖片,50)，雖然不能做別的事，但是畫面50ms會撥放一張圖)</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>DOM操作</li>
-<li>XML</li>
-<li>CSV</li>
-<li>JSON <blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox"> eavl()、<strong>JSON.parse()</strong>，不熟</li>
-</ul>
-</blockquote>
-</li>
-<li>表單驗證(表達式應用)</li>
-<li>POST<blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox"> 對瀏覽器端得請求解碼要使用:<br><strong>setRequestHeader()</strong> 伺服器用響應首部向瀏覽器發送訊息。<br>setRequestHeader(“Content-Type”,”applocation/x-www-form-urlencoded”) 告訴伺服器收到名/值，類似於     Web 表單提交時發送的名/值。</li>
-</ul>
-</blockquote>
-</li>
-<li>開一 utils.js 放常用到的小工具函式(藉此增加自己常用的函式庫)    </li>
-</ul>
-<hr>
-<h3 id="覺得-JSON-和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好"><a href="#覺得-JSON-和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好" class="headerlink" title="覺得 JSON 和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好.."></a>覺得 JSON 和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好..</h3><ul>
-<li style="list-style: none"><input type="checkbox" checked> 先看完 ajax 這本書</li>
-<li style="list-style: none"><input type="checkbox"> 要補一下 Promise 和 ajax 更多細節…<blockquote>
-<p><a href="http://jazzlion.github.io/2016/06/18/Javascript%E7%9A%84%E9%9D%9E%E5%90%8C%E6%AD%A5%E4%B9%8B%E6%97%85-Part-I/" target="_blank" rel="noopener">Javascript的非同步之旅</a><br><a href="http://jazzlion.github.io/2016/07/20/%E6%B7%BA%E8%AB%87%E9%9D%9E%E5%90%8C%E6%AD%A5%E8%BC%89%E5%85%A5script/" target="_blank" rel="noopener">淺談非同步載入script</a><br><a href="https://openhome.cc/Gossip/ECMAScript/index.html" target="_blank" rel="noopener">語言技術：ECMAScript Essence</a></p>
-</blockquote>
-</li>
-<li style="list-style: none"><input type="checkbox"> 表單製作</li>
-<li style="list-style: none"><input type="checkbox"> Wes 第6課</li>
-<li style="list-style: none"><input type="checkbox"> 課程後 50% xD</li>
-</ul>
+        <h2 id="為-sidebar-開啟分類連結"><a href="#為-sidebar-開啟分類連結" class="headerlink" title="為 sidebar 開啟分類連結"></a>為 sidebar 開啟分類連結</h2><p>因為一直以來都是用 themes 資料夾外的 _config.yml 增加分類，<br>但 sidebar 的分類連結一直沒通 (disabled 狀態)…<br>所以今日來開通分類連結拉!<br><a id="more"></a></p>
+<h3 id="點開-themes-資料夾外的-config-yml-檔，在-category-map-中添加-日記-diary"><a href="#點開-themes-資料夾外的-config-yml-檔，在-category-map-中添加-日記-diary" class="headerlink" title="點開 themes 資料夾外的 _config.yml 檔，在 category_map 中添加 日記: diary"></a>點開 themes 資料夾外的 _config.yml 檔，在 category_map 中添加 <code>日記: diary</code></h3><p>以 <code>日記: diary</code> 為例，前項為顯示在頁面時會是 “日記”，後項是指寫文章時 md 檔上面的 <code>categories: diary</code>，所以會在頁面顯示<code>日記</code>、在 md 檔寫<code>diary</code>，public 資料夾裡的 categories 資料夾會以 <code>diary</code> 為名新增資料夾 xD</p>
+<h4 id="1-在-themes-資料夾外的-config-yml-增加分類。"><a href="#1-在-themes-資料夾外的-config-yml-增加分類。" class="headerlink" title="1. 在 themes 資料夾外的 _config.yml 增加分類。"></a>1. 在 themes 資料夾外的 _config.yml 增加分類。</h4><p>因為我前後項都是中文，所以 md 檔和資料夾名都是中文不是英文 xD<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Category &amp; Tag</span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">  編程: 編程</span><br><span class="line">  日記: 日記</span><br><span class="line">  學習日記: 學習日記</span><br><span class="line">tag_map:</span><br></pre></td></tr></table></figure></p>
+<h3 id="讓分類連結可以顯示分類頁面"><a href="#讓分類連結可以顯示分類頁面" class="headerlink" title="讓分類連結可以顯示分類頁面"></a>讓分類連結可以顯示分類頁面</h3><h4 id="2-接下來為了讓-sidebar-分類連結可以點，在資料夾-bash-下指令，或去掉-直接用-cmd-之類的下指令也可。"><a href="#2-接下來為了讓-sidebar-分類連結可以點，在資料夾-bash-下指令，或去掉-直接用-cmd-之類的下指令也可。" class="headerlink" title="2. 接下來為了讓 sidebar 分類連結可以點，在資料夾 bash 下指令，或去掉 $ 直接用 cmd 之類的下指令也可。"></a>2. 接下來為了讓 sidebar 分類連結可以點，在資料夾 bash 下指令，或去掉 $ 直接用 cmd 之類的下指令也可。</h4><p>這會讓 themes 資料夾外的 source 資料夾產生一個 categories 資料夾，內含一 index.md。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure></p>
+<p>index.md 內一開始長這樣。<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-05-11 19:34:48</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-將-index-md-修改成這樣。-title-是顯示在頁面上的標題。"><a href="#3-將-index-md-修改成這樣。-title-是顯示在頁面上的標題。" class="headerlink" title="3. 將 index.md 修改成這樣。 title: 是顯示在頁面上的標題。"></a>3. 將 index.md 修改成這樣。 title: 是顯示在頁面上的標題。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分類</span><br><span class="line">date: 2019-05-11 19:34:48</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h4 id="4-去到-themes-資料夾裡，打開-config-yml-檔案，ctrl-f-搜尋-menu。"><a href="#4-去到-themes-資料夾裡，打開-config-yml-檔案，ctrl-f-搜尋-menu。" class="headerlink" title="4. 去到 themes 資料夾裡，打開 _config.yml 檔案，ctrl+f 搜尋 menu。"></a>4. 去到 themes 資料夾裡，打開 _config.yml 檔案，ctrl+f 搜尋 menu。</h4><p>找到這段，將 categories: /categories/ || th 前面的 # 刪除。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  #about: /about/ || user</span><br><span class="line">  #tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  #schedule: /schedule/ || calendar</span><br><span class="line">  #sitemap: /sitemap.xml || sitemap</span><br><span class="line">  #commonweal: /404/ || heartbeat</span><br></pre></td></tr></table></figure></p>
+<h3 id="然後我點開-sidebar，分類連結就可以顯示分類頁面了。"><a href="#然後我點開-sidebar，分類連結就可以顯示分類頁面了。" class="headerlink" title="然後我點開 sidebar，分類連結就可以顯示分類頁面了。"></a>然後我點開 sidebar，分類連結就可以顯示分類頁面了。</h3><p>然後 menu 也多了一個有 icon 的 “分類” 選項xD</p>
+<p>還沒用其他選項，之後要用再查… 沒有找到官方文件(或是有找到沒看懂xd)。<br>是參考 whx4J8 的教學 <a href="https://whx4j8.github.io/2016/03/16/hexo-next-%E6%B7%BB%E5%8A%A0%E4%B8%BA%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB/" target="_blank" rel="noopener">hexo next 为文章添加分类</a></p>
 
       
     </div>
@@ -514,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/20190508/tag0508.html" rel="next" title="tag0508 - 初探 ajax 與 phaser.js">
-                <i class="fa fa-chevron-left"></i> tag0508 - 初探 ajax 與 phaser.js
+              <a href="/blog/20190510/tag0510.html" rel="next" title="tag0510 - 健康murmur">
+                <i class="fa fa-chevron-left"></i> tag0510 - 健康murmur
               </a>
             
           </div>
@@ -523,10 +459,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/20190509/test.html" rel="prev" title="密碼屏蔽測試(yes)">
-                密碼屏蔽測試(yes) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -660,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#日記"><span class="nav-number">1.</span> <span class="nav-text">日記</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#把ajax快速閱覽過一次了，後面提到-ajax順序"><span class="nav-number">1.1.</span> <span class="nav-text">把ajax快速閱覽過一次了，後面提到 ajax順序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#覺得-JSON-和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好"><span class="nav-number">1.2.</span> <span class="nav-text">覺得 JSON 和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好..</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#為-sidebar-開啟分類連結"><span class="nav-number">1.</span> <span class="nav-text">為 sidebar 開啟分類連結</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#點開-themes-資料夾外的-config-yml-檔，在-category-map-中添加-日記-diary"><span class="nav-number">1.1.</span> <span class="nav-text">點開 themes 資料夾外的 _config.yml 檔，在 category_map 中添加 日記: diary</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-在-themes-資料夾外的-config-yml-增加分類。"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 在 themes 資料夾外的 _config.yml 增加分類。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讓分類連結可以顯示分類頁面"><span class="nav-number">1.2.</span> <span class="nav-text">讓分類連結可以顯示分類頁面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-接下來為了讓-sidebar-分類連結可以點，在資料夾-bash-下指令，或去掉-直接用-cmd-之類的下指令也可。"><span class="nav-number">1.2.1.</span> <span class="nav-text">2. 接下來為了讓 sidebar 分類連結可以點，在資料夾 bash 下指令，或去掉 $ 直接用 cmd 之類的下指令也可。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-將-index-md-修改成這樣。-title-是顯示在頁面上的標題。"><span class="nav-number">1.2.2.</span> <span class="nav-text">3. 將 index.md 修改成這樣。 title: 是顯示在頁面上的標題。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-去到-themes-資料夾裡，打開-config-yml-檔案，ctrl-f-搜尋-menu。"><span class="nav-number">1.2.3.</span> <span class="nav-text">4. 去到 themes 資料夾裡，打開 _config.yml 檔案，ctrl+f 搜尋 menu。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#然後我點開-sidebar，分類連結就可以顯示分類頁面了。"><span class="nav-number">1.3.</span> <span class="nav-text">然後我點開 sidebar，分類連結就可以顯示分類頁面了。</span></a></li></ol></li></ol></div>
             
 
           </div>
