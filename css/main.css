@@ -1146,6 +1146,9 @@ pre .javascript .function {
 }
 .site-nav-toggle {
   display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 @media (max-width: 767px) {
   .site-nav-toggle {
@@ -1657,11 +1660,6 @@ pre .javascript .function {
   color: #eee;
   border-bottom-color: #eee;
 }
-@media (max-width: 991px) {
-  .sidebar {
-    display: none;
-  }
-}
 .sidebar-inner {
   position: relative;
   padding: 20px 10px;
@@ -1705,7 +1703,6 @@ pre .javascript .function {
   .sidebar-toggle {
     opacity: 0.8;
     right: 20px;
-    display: none;
   }
 }
 .sidebar-toggle-line {
@@ -1762,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff30fa;
+  background: #dda3e2;
 }
 .feed-link,
 .chat {
@@ -2471,8 +2468,22 @@ embed {
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
 }
-body::after,
-html::after {
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+body,
+html,
+.post-body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "微軟正黑體", "Segoe UI", monospace, sans-serif !important;
+}
+pre {
+  font-family: 'Source Code Pro', monospace;
+}
+body::after {
   content: "";
   display: block;
   position: fixed;
@@ -2559,6 +2570,22 @@ html::after {
   border-bottom: 3px solid #c4bd40;
   display: inline-block;
 }
+.posts-expand .post-body h3 {
+  border-left: 10px solid #c4bd40;
+  padding-top: 0;
+  padding-left: 10px;
+  display: inline-block;
+}
+.posts-expand .post-body h4 {
+  background-color: #aaa;
+  border-radius: 5px;
+  padding-top: 0;
+  padding: 5px;
+  display: inline-block;
+}
+.posts-expand .post-body p {
+  padding-left: 23px;
+}
 .posts-expand .post-title-link {
   background-color: #c4bd40;
   padding: 0 5px;
@@ -2589,4 +2616,53 @@ html::after {
   margin-top: 20px;
   background-color: #fff;
   border-radius: 50%;
+}
+@media screen and (max-width: 500px) {
+  .site-nav-toggle {
+    display: inline-block;
+    outline: none !important;
+    width: 50px;
+    margin-left: 70vw;
+    background-color: #aaa;
+    border: 1px solid #000;
+    position: absolute !important;
+    top: 0px !important;
+    right: 0 !important;
+  }
+  .site-nav,
+  .site-nav-on {
+    margin-left: 0;
+  }
+  .header-inner {
+    margin: 30px auto;
+    width: 300px;
+  }
+  .menu .menu-item .fa {
+    margin-right: 10px !important;
+  }
+  main,
+  .main,
+  #main {
+    width: 100%;
+  }
+  .main-inner {
+    margin: 0;
+    padding: 10px;
+  }
+  .header-inner {
+    margin: 10px;
+    width: 300px;
+  }
+  body::after {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 96.5% !important;
+    height: 98% !important;
+    border: 6px solid #000;
+    pointer-events: none;
+    z-index: 9999;
+  }
 }
