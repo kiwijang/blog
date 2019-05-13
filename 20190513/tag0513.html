@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="測試中">
 <meta property="og:description" content="前言發現在嘗試了解 AJAX 和 API 時常常不知道自己在幹嘛… 才發現原來這些的基礎是 HTTP 協定。所以打算先把 AJAX 和 API 放一邊，來好好看看 HTTP 協定到底是什麼…">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-13T07:01:07.001Z">
+<meta property="og:updated_time" content="2019-05-13T08:20:48.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tag0513">
 <meta name="twitter:description" content="前言發現在嘗試了解 AJAX 和 API 時常常不知道自己在幹嘛… 才發現原來這些的基礎是 HTTP 協定。所以打算先把 AJAX 和 API 放一邊，來好好看看 HTTP 協定到底是什麼…">
@@ -371,7 +371,7 @@
                 
               
 
-              <time title="創建時間：2019-05-13 14:12:56 / 修改時間：15:01:07" itemprop="dateCreated datePublished" datetime="2019-05-13T14:12:56+08:00">2019-05-13</time>
+              <time title="創建時間：2019-05-13 14:12:56 / 修改時間：16:20:48" itemprop="dateCreated datePublished" datetime="2019-05-13T14:12:56+08:00">2019-05-13</time>
             
 
             
@@ -432,17 +432,56 @@
 <h2 id="什麼是Http協議"><a href="#什麼是Http協議" class="headerlink" title="什麼是Http協議?"></a>什麼是Http協議?</h2><p>協議是指計算機通信網絡中兩台計算機之間進行通信所必須共同遵守的規定或規則。 <em>( HTTP抓包實戰 p1 )</em><br>HTTP 有很多應用，最著名的是用於 Web 瀏覽器和 Web 伺服器之間的雙工通信。 <em>( HTTP權威指南 )</em><br>目想了解的 HTTP 協議是 HTTP/1.1 版本。(HTTP/2 標準於2015年5月以 RFC 7540 正式發表，所以在 2015 以前的瀏覽器版本通常不支援)</p>
 <h2 id="如何以-Javascript-發送-HTTP-請求"><a href="#如何以-Javascript-發送-HTTP-請求" class="headerlink" title="如何以 Javascript 發送 HTTP 請求?"></a>如何以 Javascript 發送 HTTP 請求?</h2><p>以 JavaScript 操作 HTTP，與後端 API 進行溝通。<br>最後，解析回應的 JSON 資料，並以之渲染頁面！<br><a href="https://notfalse.net/29/xmlhttprequest" target="_blank" rel="noopener">XMLHttpRequest — JavaScript 發送 HTTP 請求 (I)</a><br><a href="https://notfalse.net/30/jQuery-Ajax" target="_blank" rel="noopener">jQuery Ajax — JavaScript 發送 HTTP 請求 (II)</a><br><a href="https://notfalse.net/31/fetch-api" target="_blank" rel="noopener">Fetch API — JavaScript 發送 HTTP 請求 (III)</a>  </p>
 <hr>
-<h4 id="鄭中勝-HTTP-教學網站"><a href="#鄭中勝-HTTP-教學網站" class="headerlink" title="鄭中勝 HTTP 教學網站:"></a>鄭中勝 HTTP 教學網站:</h4><p>佛心 TT<br><a href="https://notfalse.net/http-series" target="_blank" rel="noopener">HTTP 教學</a>  </p>
+<h4 id="鄭中勝-HTTP-教學網站"><a href="#鄭中勝-HTTP-教學網站" class="headerlink" title="鄭中勝 HTTP 教學網站:"></a>鄭中勝 HTTP 教學網站:</h4><p><a href="https://notfalse.net/http-series" target="_blank" rel="noopener">HTTP 教學</a>  </p>
 <hr>
-<h2 id="節錄-HTTP-教學網-與個人尚未消化的斷簡殘篇"><a href="#節錄-HTTP-教學網-與個人尚未消化的斷簡殘篇" class="headerlink" title="節錄 HTTP 教學網(與個人尚未消化的斷簡殘篇)"></a>節錄 HTTP 教學網(與個人尚未消化的斷簡殘篇)</h2><p>Web server? client? 到底是….</p>
-<h4 id="HTTP-旨在"><a href="#HTTP-旨在" class="headerlink" title="HTTP 旨在:"></a>HTTP 旨在:</h4><p>透過向客戶端(Client)提供與”資源種類”無關的統一介面(uniform interface)，藉此隱藏服務實現的細節。</p>
+<h2 id="節錄-HTTP-教學網-與個人尚未消化的斷簡殘篇"><a href="#節錄-HTTP-教學網-與個人尚未消化的斷簡殘篇" class="headerlink" title="節錄 HTTP 教學網(與個人尚未消化的斷簡殘篇)"></a>節錄 HTTP 教學網(與個人尚未消化的斷簡殘篇)</h2><p><br></p>
+<h4 id="Web-server-client-到底是…"><a href="#Web-server-client-到底是…" class="headerlink" title="Web server? client? 到底是…."></a>Web server? client? 到底是….</h4><ul>
+<li>client 我目前理解是:瀏覽器。</li>
+<li>web server</li>
+</ul>
+<h3 id="伺服器-sever-分"><a href="#伺服器-sever-分" class="headerlink" title="伺服器(sever)分:"></a>伺服器(sever)分:</h3><p>以下截自 <a href="https://www.blueeyes.com.tw/knowledge_server.php" target="_blank" rel="noopener">藍眼科技-何謂伺服器(Server) ?</a></p>
+<ol>
+<li><strong>伺服器(電腦)</strong></li>
+</ol>
+<ul>
+<li>伺服器<ul>
+<li>伺服器作業系統指執行在伺服器硬體上的作業系統。伺服器os 需要管理和充分利用伺服器硬體的計算能力並提供給伺服器硬體上的軟體使用。</li>
+</ul>
+</li>
+<li>PC機<ul>
+<li>指個人電腦。</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong>伺服器軟體</strong></li>
+</ol>
+<ul>
+<li>伺服器軟體工作在客戶端-伺服器或瀏覽器-伺服器的方式，有很多形式的伺服器，常用的包括：<ul>
+<li>檔案伺服器（File Server） - 如Novell的NetWare</li>
+<li>資料庫伺服器（Database Server） - 如Oracle資料庫伺服器，MySQL，PostgreSQL，Microsoft SQL Server等</li>
+<li>郵件伺服器（Mail Server） - Sendmail，Postfix，Qmail，Microsoft Exchange，Lotus Domino等</li>
+<li>網頁伺服器（Web Server） - 如Apache，thttpd，微軟的IIS等</li>
+<li>FTP伺服器（FTP Server） - Pureftpd，Proftpd，WU-ftpd，Serv-U等</li>
+<li>域名伺服器（DNS Server） - 如Bind9等</li>
+<li>應用程式伺服器（AP Server） - 如Bea公司的WebLogic，JBoss，Sun的GlassFish</li>
+<li>代理伺服器（Proxy Server） - 如Squid cache</li>
+<li>電腦名稱轉換伺服器 - 如微軟的WINS伺服器</li>
+</ul>
+</li>
+</ul>
+<h3 id="所以伺服器-硬體-gt-伺服器OS管理硬體資源並提供指令-gt-伺服器軟體-由指令構成軟體，進行各種用途"><a href="#所以伺服器-硬體-gt-伺服器OS管理硬體資源並提供指令-gt-伺服器軟體-由指令構成軟體，進行各種用途" class="headerlink" title="所以伺服器(硬體)-&gt;伺服器OS管理硬體資源並提供指令-&gt;伺服器軟體(由指令構成軟體，進行各種用途)"></a>所以伺服器(硬體)-&gt;伺服器OS管理硬體資源並提供指令-&gt;伺服器軟體(由指令構成軟體，進行各種用途)</h3><p>所以目前我是要了解從 <code>client</code> 端要發送請求給 <code>server</code> 端，先都全部以 <code>server</code> 端理解(不細分成伺服器硬體、OS、軟體)。</p>
+<h4 id="HTTP-旨在"><a href="#HTTP-旨在" class="headerlink" title="HTTP 旨在:"></a>HTTP 旨在:</h4><p>透過向客戶端(Client)提供與 <code>資源種類</code> 無關的統一介面(uniform interface)，藉此隱藏服務實現的細節。</p>
 <h4 id="同理"><a href="#同理" class="headerlink" title="同理:"></a>同理:</h4><p>伺服端 (Server) 不需知道每個客戶端的目的 (purpose)，單獨的考慮每個HTTP請求，而非僅與特定種類的 Client 或應用相關。Client 依賴的是抽象的介面 (HTTP) 與表示 (representation)，而非具體的 Server 或 特定的類型 (e.g., html、txt、json)，因此，不用也不該知道 Server 如何實作資源。 </p>
 <hr>
 <h4 id="REST-指導-HTTP"><a href="#REST-指導-HTTP" class="headerlink" title="REST 指導 HTTP"></a>REST 指導 HTTP</h4><hr>
-<h4 id="URL與URI-還有URN"><a href="#URL與URI-還有URN" class="headerlink" title="URL與URI?還有URN?"></a>URL與URI?還有URN?</h4><p>統一資源定位符(URL) 和 統一資源識別符(URI)  </p>
+<h4 id="URL與URI-還有URN"><a href="#URL與URI-還有URN" class="headerlink" title="URL與URI?還有URN?"></a>URL與URI?還有URN?</h4><p>統一資源定位符(URL) 和 統一資源識別符(URI) </p>
 <hr>
 <h4 id="HTTP的工作原理"><a href="#HTTP的工作原理" class="headerlink" title="HTTP的工作原理?"></a>HTTP的工作原理?</h4><hr>
-<h4 id="訊息格式-請求回應到底是在傳3小"><a href="#訊息格式-請求回應到底是在傳3小" class="headerlink" title="訊息格式?請求回應到底是在傳3小?"></a>訊息格式?請求回應到底是在傳3小?</h4><p><a href="https://notfalse.net/39/http-message-format" target="_blank" rel="noopener">https://notfalse.net/39/http-message-format</a><br>HTTP 並非設計為傳輸協定 (Transport Protocol)，<br>而是以訊息 (message) 反映 Web 架構語意的轉移協定 (Transfer Protocol)，標題與系列文皆沿用早期翻譯習慣 (傳輸)，但心中仍得有把尺。  </p>
+<h4 id="訊息格式-請求回應到底是在傳3小"><a href="#訊息格式-請求回應到底是在傳3小" class="headerlink" title="訊息格式?請求回應到底是在傳3小?"></a>訊息格式?請求回應到底是在傳3小?</h4><p>此坑待補!</p>
+<ul>
+<li style="list-style: none"><input type="checkbox"> <a href="https://notfalse.net/39/http-message-format" target="_blank" rel="noopener">HTTP/1.1 — 訊息格式 (Message Format)</a><br>HTTP 並非設計為傳輸協定 (Transport Protocol)，<br>而是以訊息 (message) 反映 Web 架構語意的轉移協定 (Transfer Protocol)，標題與系列文皆沿用早期翻譯習慣 (傳輸)，但心中仍得有把尺。  </li>
+</ul>
 <hr>
 <h4 id="資源的表示方式"><a href="#資源的表示方式" class="headerlink" title="資源的表示方式?"></a>資源的表示方式?</h4><hr>
 <h4 id="內容協商-Content-Negotiation"><a href="#內容協商-Content-Negotiation" class="headerlink" title="內容協商?(Content Negotiation)"></a>內容協商?(Content Negotiation)</h4><p><a href="https://notfalse.net/41/http-content-negotiation" target="_blank" rel="noopener">內容協商教學文</a><br>主要有三種模式:</p>
@@ -453,6 +492,27 @@
 </ul>
 <hr>
 <h4 id="HTTP權威指南的目錄"><a href="#HTTP權威指南的目錄" class="headerlink" title="HTTP權威指南的目錄"></a>HTTP權威指南的目錄</h4><p>為了先讓自己有個大概念，先把書籍目錄列出來，再來慢慢搞懂。<br>●第一部分 HTTP: Web 的基礎<br> HTTP 概述<br> URL 與資源<br> HTTP 報文<br> 連接管理<br>●第二部分 HTTP 結構<br> Web 伺服器<br> 代理<br> 緩存<br> 集成點: 閘道(網關、gateway)、隧道、代理(中繼、proxy)<br> Web 機器人<br> HTTP-NG<br>●第三部分 識別、認證與安全<br> 客戶識別與 cookie 機制<br> 基本認證機制<br> 摘要認證<br> 安全 HTTP<br>●第四部份 實體、編碼和國際化<br> 實體和編碼<br> 國際化<br> 內容協商與轉碼<br>●第五部分 內容發布與分發<br> Web 主機托管<br> 發布系統<br> 重定向與負載均衡<br> 日誌紀錄與使用情況跟蹤</p>
+<h3 id="所以打算以閱覽過一二三部分為主，並同時統整-HTTP-網教學等資料來慢慢了解-HTTP…"><a href="#所以打算以閱覽過一二三部分為主，並同時統整-HTTP-網教學等資料來慢慢了解-HTTP…" class="headerlink" title="所以打算以閱覽過一二三部分為主，並同時統整 HTTP 網教學等資料來慢慢了解 HTTP…"></a>所以打算以閱覽過一二三部分為主，並同時統整 HTTP 網教學等資料來慢慢了解 HTTP…</h3><ul>
+<li style="list-style: none"><input type="checkbox"> HTTP權威指南123</li>
+<li style="list-style: none"><input type="checkbox"> 看完這個 <a href="https://www.youtube.com/watch?v=9TAanXxNvEI&amp;t=491s" target="_blank" rel="noopener">json-server - 讓你不會後端也能開 API</a></li>
+<li style="list-style: none"><input type="checkbox"> 看看這個 <a href="https://ephrain.net/web-%E4%BD%BF%E7%94%A8-mailto-%E9%80%A3%E7%B5%90%E7%94%A2%E7%94%9F%E9%9B%BB%E5%AD%90%E9%83%B5%E4%BB%B6%E5%85%A7%E5%AE%B9%E7%AF%84%E6%9C%AC-template/" target="_blank" rel="noopener">使用 mailto: 連結產生電子郵件內容範本 (template)</a></li>
+<li style="list-style: none"><input type="checkbox"> 看看別人如何接API<a href="https://github.com/wenyo/kaohsiungTraveling/blob/master/js/all.js" target="_blank" rel="noopener">學學好ㄇ</a><br><br><h3 id="tag0509的目標暫緩"><a href="#tag0509的目標暫緩" class="headerlink" title="tag0509的目標暫緩"></a>tag0509的目標暫緩</h3><blockquote>
+<p>覺得 JSON 和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好..</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 先看完 ajax 這本書</li>
+<li style="list-style: none"><input type="checkbox"> 要補一下 Promise 和 ajax 更多細節…<blockquote>
+<p><a href="http://jazzlion.github.io/2016/06/18/Javascript%E7%9A%84%E9%9D%9E%E5%90%8C%E6%AD%A5%E4%B9%8B%E6%97%85-Part-I/" target="_blank" rel="noopener">Javascript的非同步之旅</a><br><a href="http://jazzlion.github.io/2016/07/20/%E6%B7%BA%E8%AB%87%E9%9D%9E%E5%90%8C%E6%AD%A5%E8%BC%89%E5%85%A5script/" target="_blank" rel="noopener">淺談非同步載入script</a><br><a href="https://openhome.cc/Gossip/ECMAScript/index.html" target="_blank" rel="noopener">語言技術：ECMAScript Essence</a></p>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 表單製作</li>
+</ul>
+</blockquote>
+</li>
+<li style="list-style: none"><input type="checkbox"> Wes 第6課</li>
+<li style="list-style: none"><input type="checkbox"> 課程後 50% xD</li>
+</ul>
+</blockquote>
+</li>
+</ul>
 
       
     </div>
@@ -654,7 +714,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什麼是Http協議"><span class="nav-number">2.</span> <span class="nav-text">什麼是Http協議?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何以-Javascript-發送-HTTP-請求"><span class="nav-number">3.</span> <span class="nav-text">如何以 Javascript 發送 HTTP 請求?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#鄭中勝-HTTP-教學網站"><span class="nav-number">3.0.1.</span> <span class="nav-text">鄭中勝 HTTP 教學網站:</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#節錄-HTTP-教學網-與個人尚未消化的斷簡殘篇"><span class="nav-number">4.</span> <span class="nav-text">節錄 HTTP 教學網(與個人尚未消化的斷簡殘篇)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-旨在"><span class="nav-number">4.0.1.</span> <span class="nav-text">HTTP 旨在:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同理"><span class="nav-number">4.0.2.</span> <span class="nav-text">同理:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#REST-指導-HTTP"><span class="nav-number">4.0.3.</span> <span class="nav-text">REST 指導 HTTP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL與URI-還有URN"><span class="nav-number">4.0.4.</span> <span class="nav-text">URL與URI?還有URN?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP的工作原理"><span class="nav-number">4.0.5.</span> <span class="nav-text">HTTP的工作原理?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#訊息格式-請求回應到底是在傳3小"><span class="nav-number">4.0.6.</span> <span class="nav-text">訊息格式?請求回應到底是在傳3小?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#資源的表示方式"><span class="nav-number">4.0.7.</span> <span class="nav-text">資源的表示方式?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#內容協商-Content-Negotiation"><span class="nav-number">4.0.8.</span> <span class="nav-text">內容協商?(Content Negotiation)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP權威指南的目錄"><span class="nav-number">4.0.9.</span> <span class="nav-text">HTTP權威指南的目錄</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什麼是Http協議"><span class="nav-number">2.</span> <span class="nav-text">什麼是Http協議?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何以-Javascript-發送-HTTP-請求"><span class="nav-number">3.</span> <span class="nav-text">如何以 Javascript 發送 HTTP 請求?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#鄭中勝-HTTP-教學網站"><span class="nav-number">3.0.1.</span> <span class="nav-text">鄭中勝 HTTP 教學網站:</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#節錄-HTTP-教學網-與個人尚未消化的斷簡殘篇"><span class="nav-number">4.</span> <span class="nav-text">節錄 HTTP 教學網(與個人尚未消化的斷簡殘篇)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Web-server-client-到底是…"><span class="nav-number">4.0.1.</span> <span class="nav-text">Web server? client? 到底是….</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伺服器-sever-分"><span class="nav-number">4.1.</span> <span class="nav-text">伺服器(sever)分:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#所以伺服器-硬體-gt-伺服器OS管理硬體資源並提供指令-gt-伺服器軟體-由指令構成軟體，進行各種用途"><span class="nav-number">4.2.</span> <span class="nav-text">所以伺服器(硬體)-&gt;伺服器OS管理硬體資源並提供指令-&gt;伺服器軟體(由指令構成軟體，進行各種用途)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-旨在"><span class="nav-number">4.2.1.</span> <span class="nav-text">HTTP 旨在:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同理"><span class="nav-number">4.2.2.</span> <span class="nav-text">同理:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#REST-指導-HTTP"><span class="nav-number">4.2.3.</span> <span class="nav-text">REST 指導 HTTP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL與URI-還有URN"><span class="nav-number">4.2.4.</span> <span class="nav-text">URL與URI?還有URN?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP的工作原理"><span class="nav-number">4.2.5.</span> <span class="nav-text">HTTP的工作原理?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#訊息格式-請求回應到底是在傳3小"><span class="nav-number">4.2.6.</span> <span class="nav-text">訊息格式?請求回應到底是在傳3小?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#資源的表示方式"><span class="nav-number">4.2.7.</span> <span class="nav-text">資源的表示方式?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#內容協商-Content-Negotiation"><span class="nav-number">4.2.8.</span> <span class="nav-text">內容協商?(Content Negotiation)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP權威指南的目錄"><span class="nav-number">4.2.9.</span> <span class="nav-text">HTTP權威指南的目錄</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#所以打算以閱覽過一二三部分為主，並同時統整-HTTP-網教學等資料來慢慢了解-HTTP…"><span class="nav-number">4.3.</span> <span class="nav-text">所以打算以閱覽過一二三部分為主，並同時統整 HTTP 網教學等資料來慢慢了解 HTTP…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tag0509的目標暫緩"><span class="nav-number">4.4.</span> <span class="nav-text">tag0509的目標暫緩</span></a></li></div>
             
 
           </div>
