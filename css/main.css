@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c6386a;
+  background: #c80d3b;
 }
 .feed-link,
 .chat {
@@ -2490,8 +2490,8 @@ body::after {
   left: 0;
   top: 0;
   width: 97.5% !important;
-  height: 94.5% !important;
-  border: 20px solid #000;
+  height: 95% !important;
+  border: 20px solid #fff67a;
   pointer-events: none;
   z-index: 9999;
 }
@@ -2616,6 +2616,9 @@ body::after {
   margin-top: 20px;
   background-color: #fff;
   border-radius: 50%;
+}
+.sidebar-inner {
+  height: 100%;
 }
 @media screen and (max-width: 500px) {
   .site-nav-toggle {
