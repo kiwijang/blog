@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffffb3;
+  background: #6bcca3;
 }
 .feed-link,
 .chat {
@@ -2619,6 +2619,18 @@ body::after {
 }
 .sidebar-inner {
   height: 100%;
+}
+canvas#canvas {
+  z-index: 3;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+}
+@media screen and (max-width: 910px) {
+  canvas#canvas {
+    display: none;
+  }
 }
 @media screen and (max-width: 500px) {
   .site-nav-toggle {
