@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="測試中">
 <meta property="og:description" content="看到了第5章 canvas 與特效動畫的章節。">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-06-10T15:50:39.684Z">
+<meta property="og:updated_time" content="2019-06-10T15:54:33.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tag0610">
 <meta name="twitter:description" content="看到了第5章 canvas 與特效動畫的章節。">
@@ -373,7 +373,7 @@
                 
               
 
-              <time title="創建時間：2019-06-10 12:10:37 / 修改時間：23:50:39" itemprop="dateCreated datePublished" datetime="2019-06-10T12:10:37+08:00">2019-06-10</time>
+              <time title="創建時間：2019-06-10 12:10:37 / 修改時間：23:54:33" itemprop="dateCreated datePublished" datetime="2019-06-10T12:10:37+08:00">2019-06-10</time>
             
 
             
@@ -430,7 +430,7 @@
       
 
       
-        <p>看到了第5章 canvas 與特效動畫的章節。<br><a id="more"></a><br>本想直接深入了解 canvas 才發現他的 template 模板概念跟原型鏈有關，所以回頭看了關於 callback、this 的文章<br><a href="https://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/?fbclid=IwAR0OM9ix2wEsiz19_LdwPqItgPdHGQCle2SbYD-C6z84zIu23YFQDGb9Ky8" target="_blank" rel="noopener">Understand JavaScript Callback Functions and Use Them</a><br>這篇是在說 <code>callback function</code> 的意思是: <code>function</code> 可以做為參數傳遞(傳入函式裡並執行)。</p>
+        <p>看到了第5章 canvas 與特效動畫的章節。<br><a id="more"></a><br>本想直接深入了解 canvas 才發現他的 template 模板概念跟原型鏈有關，所以回頭看了關於 callback、this 的文章<a href="https://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/?fbclid=IwAR0OM9ix2wEsiz19_LdwPqItgPdHGQCle2SbYD-C6z84zIu23YFQDGb9Ky8" target="_blank" rel="noopener">Understand JavaScript Callback Functions and Use Them</a> 這篇是在說 <code>callback function</code> 的意思是: <code>function</code> 可以做為參數傳遞(傳入函式裡並執行)。</p>
 <p>在另一個函式內引用的 <code>callback function</code> 的 <code>this</code>，並不是一開始的 <code>this</code> 所指之 <code>clientData物件</code>，而是引用後沒特別指定、指向了全域(window)。</p>
 <h3 id="clientData物件"><a href="#clientData物件" class="headerlink" title="clientData物件"></a>clientData物件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> clientData = &#123;</span><br><span class="line">    id: <span class="number">094545</span>,</span><br><span class="line">    fullName: <span class="string">"Not Set"</span>,</span><br><span class="line">    <span class="comment">// setUserName is a method on the clientData object</span></span><br><span class="line">    setUserName: <span class="function"><span class="keyword">function</span> (<span class="params">firstName, lastName</span>)  </span>&#123;</span><br><span class="line">      <span class="comment">// this refers to the fullName property in this object</span></span><br><span class="line">      <span class="keyword">this</span>.fullName = firstName + <span class="string">" "</span> + lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="引用函式"><a href="#引用函式" class="headerlink" title="引用函式"></a>引用函式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserInput</span>(<span class="params">firstName, lastName, callback</span>)  </span>&#123;</span><br><span class="line">    callback (firstName, lastName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
