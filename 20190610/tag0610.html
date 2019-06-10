@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-TW">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="看到了第5章 canvas 與特效動畫的章節。">
+<meta name="keywords" content="callback function,原型鏈,prototype,ES6 之 class,ES6 之 get&#x2F;set">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tag0610">
+<meta property="og:url" content="http://yoursite.com/blog/20190610/tag0610.html">
+<meta property="og:site_name" content="測試中">
+<meta property="og:description" content="看到了第5章 canvas 與特效動畫的章節。">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2019-06-10T15:46:11.301Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="tag0610">
+<meta name="twitter:description" content="看到了第5章 canvas 與特效動畫的章節。">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/blog/20190610/tag0610">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>tag0610 | 測試中</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <canvas id="canvas"></canvas>
+
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">測試中</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">測試</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>標籤</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分類</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/blog/20190610/tag0610.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kiwi z">
+      <meta itemprop="description" content="這是一個測試中的部落格">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="測試中">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">tag0610
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2019-06-10 12:10:37 / 修改時間：23:46:11" itemprop="dateCreated datePublished" datetime="2019-06-10T12:10:37+08:00">2019-06-10</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/學習日記/" itemprop="url" rel="index"><span itemprop="name">學習日記</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>看到了第5章 canvas 與特效動畫的章節。<br><a id="more"></a><br>本想直接深入了解 canvas 才發現他的 template 模板概念跟原型鏈有關，所以回頭看了關於 callback、this 的文章<br><a href="https://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/?fbclid=IwAR0OM9ix2wEsiz19_LdwPqItgPdHGQCle2SbYD-C6z84zIu23YFQDGb9Ky8" target="_blank" rel="noopener">Understand JavaScript Callback Functions and Use Them</a><br>這篇是在說 <code>callback function</code> 的意思是: <code>function</code> 可以做為參數傳遞(傳入函式裡並執行)。</p>
+<p>在另一個函式內引用的 <code>callback function</code> 的 <code>this</code>，並不是一開始的 <code>this</code> 所指之 <code>clientData物件</code>，而是引用後沒特別指定、指向了全域(window)。</p>
+<h3 id="clientData物件"><a href="#clientData物件" class="headerlink" title="clientData物件"></a>clientData物件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> clientData = &#123;</span><br><span class="line">    id: <span class="number">094545</span>,</span><br><span class="line">    fullName: <span class="string">"Not Set"</span>,</span><br><span class="line">    <span class="comment">// setUserName is a method on the clientData object</span></span><br><span class="line">    setUserName: <span class="function"><span class="keyword">function</span> (<span class="params">firstName, lastName</span>)  </span>&#123;</span><br><span class="line">      <span class="comment">// this refers to the fullName property in this object</span></span><br><span class="line">      <span class="keyword">this</span>.fullName = firstName + <span class="string">" "</span> + lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="引用函式"><a href="#引用函式" class="headerlink" title="引用函式"></a>引用函式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserInput</span>(<span class="params">firstName, lastName, callback</span>)  </span>&#123;</span><br><span class="line">    callback (firstName, lastName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h3><p>照理來說 <code>clientData.setUserName</code> 運行後要修改 <code>clientData.fullName</code> 的值，被賦值為 <code>Barack Obama</code>。<br>可是因為引用函式時的 <code>this</code> 指向全域，故 <code>window.fullName</code> 才有被賦值 <code>Barack Obama</code>，<code>clientData.fullName</code> 並沒變。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">getUserInput (<span class="string">"Barack"</span>, <span class="string">"Obama"</span>, clientData.setUserName);</span><br><span class="line"><span class="built_in">console</span>.log (clientData.fullName);<span class="comment">// Not Set</span></span><br><span class="line"><span class="comment">// The fullName property was initialized on the window object</span></span><br><span class="line"><span class="built_in">console</span>.log (<span class="built_in">window</span>.fullName); <span class="comment">// Barack Obama</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="那要怎麼修正被引用的-callback-function-的-this-指向呢"><a href="#那要怎麼修正被引用的-callback-function-的-this-指向呢" class="headerlink" title="那要怎麼修正被引用的 callback function 的 this 指向呢?"></a>那要怎麼修正被引用的 <code>callback function</code> 的 <code>this</code> 指向呢?</h4><ol>
+<li><p><strong>改變源頭(物件裡的this直接改成物件名)</strong><br>把 <code>this</code> 改成物件名 <code>clientData</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> clientData = &#123;</span><br><span class="line">    id: <span class="number">094545</span>,</span><br><span class="line">    fullName: <span class="string">"Not Set"</span>,</span><br><span class="line">    setUserName: <span class="function"><span class="keyword">function</span> (<span class="params">firstName, lastName</span>)  </span>&#123;</span><br><span class="line">      clientData.fullName = firstName + <span class="string">" "</span> + lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>改變 callback 指向。</strong><br>你以為可以這樣改嗎?(餔餔~~x)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserInput</span>(<span class="params">firstName, lastName, callback</span>)  </span>&#123;</span><br><span class="line">    clientData.callback (firstName, lastName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如此可以看到跳出錯誤 <code>Uncaught TypeError: clientData.callback is not a function at getUserInput</code>，<br><code>clientData.callback</code> 不是 function，而是 <code>undefined</code> (未被賦予值的屬性，不存在)</p>
+<h4 id="怎麼會這樣-隔行如隔山的閉包作用域"><a href="#怎麼會這樣-隔行如隔山的閉包作用域" class="headerlink" title="怎麼會這樣?(隔行如隔山的閉包作用域)"></a>怎麼會這樣?(隔行如隔山的閉包作用域)</h4><p>因為 closure 閉包使得 <code>clientData.callback</code> 不可在 <code>clientData閉包</code> 之外的 <code>getUserInput閉包</code> 使用。</p>
+<h4 id="怎麼辦-如何在-閉包-中使用-其他閉包內的作用域"><a href="#怎麼辦-如何在-閉包-中使用-其他閉包內的作用域" class="headerlink" title="怎麼辦?(如何在 閉包 中使用 其他閉包內的作用域?)"></a>怎麼辦?(如何在 <code>閉包</code> 中使用 <code>其他閉包內的作用域</code>?)</h4><ol>
+<li><strong>使用 <code>Function​.prototype​.call</code>、<code>Function​.prototype​.apply</code>、<code>Function​.prototype​.bind</code></strong><br>引入作用域!!(這麼神奇)，這樣就要多傳入一參數 <code>callbackObj</code>，記得多一引數 <code>clientData</code>(傳入clientData的作用域)。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserInput</span>(<span class="params">firstName, lastName, callback,callbackObj</span>)  </span>&#123;</span><br><span class="line">    callback.call(callbackObj,firstName, lastName);</span><br><span class="line">&#125;</span><br><span class="line">getUserInput (<span class="string">"Barack"</span>, <span class="string">"Obama"</span>, clientData.setUserName,clientData);</span><br></pre></td></tr></table></figure>
+<p>這樣就修改成功了(使用<code>clientData.setUserName</code>覆蓋了<code>clientData.fullName</code>的值)。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getUserInput (<span class="string">"Barack"</span>, <span class="string">"Obama"</span>, clientData.setUserName,clientData);</span><br><span class="line"><span class="built_in">console</span>.log (clientData.fullName);<span class="comment">// "Barack Obama"</span></span><br><span class="line"><span class="built_in">console</span>.log (<span class="built_in">window</span>.fullName); <span class="comment">// "undefined"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="使用-constructor-和-protptype-的好處"><a href="#使用-constructor-和-protptype-的好處" class="headerlink" title="使用 constructor 和 protptype 的好處"></a>使用 <code>constructor</code> 和 <code>protptype</code> 的好處</h3><ol>
+<li><strong>可重複使用同一結構之物件。</strong><br><code>Client</code>有<code>id</code>、<code>fullName</code>屬性。</li>
+<li><strong><code>屬性</code>與<code>動作</code>分開設定。</strong><br>名詞與動詞分開管理的概念~<br>動作放在<code>prototype</code>，名詞放<code>constructor</code>。</li>
+<li><strong><code>定義</code>與<code>執行</code>分開。</strong><br>我們定義完共用之<code>constructor</code>與<code>prototype</code>後，使用同一原型鏈架構 <code>new</code> (創建) 一物件出來使用。<br>修改此物件並不會更改到共用結構~<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Client = <span class="function"><span class="keyword">function</span>(<span class="params">id,fullName</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.id=id;</span><br><span class="line">  <span class="keyword">this</span>.fullName=fullName;</span><br><span class="line">&#125;</span><br><span class="line">Client.prototype.setUserName= <span class="function"><span class="keyword">function</span> (<span class="params">firstName, lastName</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.fullName = firstName + <span class="string">" "</span> + lastName;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.fullName)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> Obama = <span class="keyword">new</span> Client();</span><br><span class="line">Obama.setUserName(<span class="string">"Barack"</span>,<span class="string">"Obama"</span>); <span class="comment">//"Barack Obama"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="es6語法糖-class"><a href="#es6語法糖-class" class="headerlink" title="es6語法糖 class"></a>es6語法糖 <code>class</code></h3><p>用原型鏈的方式、覆蓋屬性，會有不少重複的程式碼。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Client = <span class="function"><span class="keyword">function</span>(<span class="params">id,firstName,lastName</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.id=id;</span><br><span class="line">  <span class="keyword">this</span>.firstName = firstName;</span><br><span class="line">  <span class="keyword">this</span>.lastName = lastName;</span><br><span class="line">  <span class="keyword">this</span>.fullName = firstName + <span class="string">" "</span> + lastName;</span><br><span class="line">&#125;</span><br><span class="line">Client.prototype.setUserName= <span class="function"><span class="keyword">function</span> (<span class="params">newfirstName, newlastName</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.firstName = newfirstName;</span><br><span class="line">  <span class="keyword">this</span>.lastName = newlastName;</span><br><span class="line">  <span class="keyword">this</span>.fullName = newfirstName + <span class="string">" "</span> + newlastName;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> Hebe = <span class="keyword">new</span> Client(<span class="number">333</span>,<span class="string">"??"</span>,<span class="string">"???"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(Hebe.fullName+<span class="string">" 尚未更新fullName"</span>);</span><br><span class="line"><span class="comment">//setUserName()覆蓋掉原firstName lastName fullName屬性</span></span><br><span class="line">Hebe.setUserName(<span class="string">"Tang"</span>,<span class="string">"Hebe"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(Hebe.fullName+<span class="string">" fullName已更新"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(Hebe);</span><br><span class="line">Hebe.setUserName(<span class="string">"ads"</span>,<span class="string">"xxxx"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"1更改後: "</span>+Hebe.fullName);</span><br><span class="line"><span class="built_in">console</span>.log(Hebe);</span><br></pre></td></tr></table></figure></p>
+<p>使用 <code>class</code> 可以讓要不停被覆蓋掉的程式碼動態產生、減少重複的程式碼。<br>使用方法為動態<code>產生屬性</code>與 <code>設置屬性</code> </p>
+<ol>
+<li><strong><code>get</code> 產生屬性。</strong><br><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Functions/get" target="_blank" rel="noopener">Functions Getter</a></li>
+<li><strong><code>set</code> 設定屬性。</strong><br><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Functions/set" target="_blank" rel="noopener">Functions Setter</a><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Client2</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(id,firstName, lastName)&#123;</span><br><span class="line">    <span class="keyword">this</span>.id=id;</span><br><span class="line">    <span class="keyword">this</span>.firstName= firstName;</span><br><span class="line">    <span class="keyword">this</span>.lastName= lastName;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">get</span> fullname()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.firstName+<span class="string">" "</span>+<span class="keyword">this</span>.lastName+<span class="string">" 產生fullname屬性"</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">set</span> fullname(nv)&#123;</span><br><span class="line">    <span class="keyword">this</span>.firstName= nv.split(<span class="string">" "</span>)[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">this</span>.lastName= nv.split(<span class="string">" "</span>)[<span class="number">1</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> Louis = <span class="keyword">new</span> Client2(<span class="number">123</span>,<span class="string">"??"</span>,<span class="string">"???"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(Louis.fullname);</span><br><span class="line"><span class="built_in">console</span>.log(Louis);</span><br><span class="line"><span class="comment">//覆蓋掉 firstName lastName 屬性</span></span><br><span class="line">Louis.fullname=<span class="string">"aaaa asd"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"2更改後: "</span>+Louis.fullname);</span><br><span class="line"><span class="built_in">console</span>.log(Louis);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="待補"><a href="#待補" class="headerlink" title="待補"></a>待補</h4><ul>
+<li style="list-style: none"><input type="checkbox"> <code>undefined</code> 與 <code>hoisting</code> 設定記憶體空間?(沒賦予值就是不存在?)<a href="https://medium.com/@brianwu291/javascript%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-understanding-javascript-the-weird-part-1-execution-context-lexical-environment-55aebb71222d" target="_blank" rel="noopener">Understanding JavaScript The Weird Part-1：Execution Context &amp; Lexical Environment</a></li>
+<li style="list-style: none"><input type="checkbox"> es6語法 <a href="https://leanpub.com/understandinges6/read#leanpub-auto-objectis" target="_blank" rel="noopener">es6對象</a></li>
+<li style="list-style: none"><input type="checkbox"> 細看上面的 <code>getter</code> 和 <code>setter</code></li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/callback-function/" rel="tag"># callback function</a>
+          
+            <a href="/blog/tags/原型鏈/" rel="tag"># 原型鏈</a>
+          
+            <a href="/blog/tags/prototype/" rel="tag"># prototype</a>
+          
+            <a href="/blog/tags/ES6-之-class/" rel="tag"># ES6 之 class</a>
+          
+            <a href="/blog/tags/ES6-之-get-set/" rel="tag"># ES6 之 get/set</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/20190520/tag0520.html" rel="next" title="tag0520">
+                <i class="fa fa-chevron-left"></i> tag0520
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.png" alt="Kiwi z">
+            
+              <p class="site-author-name" itemprop="name">Kiwi z</p>
+              <div class="site-description motion-element" itemprop="description">這是一個測試中的部落格</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">文章</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/blog/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分類</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/blog/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">標籤</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#clientData物件"><span class="nav-number">1.</span> <span class="nav-text">clientData物件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用函式"><span class="nav-number">2.</span> <span class="nav-text">引用函式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#結果"><span class="nav-number">3.</span> <span class="nav-text">結果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#那要怎麼修正被引用的-callback-function-的-this-指向呢"><span class="nav-number">3.1.</span> <span class="nav-text">那要怎麼修正被引用的 callback function 的 this 指向呢?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎麼會這樣-隔行如隔山的閉包作用域"><span class="nav-number">3.2.</span> <span class="nav-text">怎麼會這樣?(隔行如隔山的閉包作用域)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎麼辦-如何在-閉包-中使用-其他閉包內的作用域"><span class="nav-number">3.3.</span> <span class="nav-text">怎麼辦?(如何在 閉包 中使用 其他閉包內的作用域?)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-constructor-和-protptype-的好處"><span class="nav-number">4.</span> <span class="nav-text">使用 constructor 和 protptype 的好處</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#es6語法糖-class"><span class="nav-number">5.</span> <span class="nav-text">es6語法糖 class</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#待補"><span class="nav-number">5.1.</span> <span class="nav-text">待補</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kiwi z</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/blog/js/utils.js?v=7.1.1"></script>
+
+  <script src="/blog/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/blog/js/scrollspy.js?v=7.1.1"></script>
+<script src="/blog/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/blog/js/canvasKuru.js"></script>
+</body>
+</html>
