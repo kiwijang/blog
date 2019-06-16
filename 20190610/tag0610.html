@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="測試中">
 <meta property="og:description" content="看到了第5章 canvas 與特效動畫的章節。">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-06-16T15:34:34.838Z">
+<meta property="og:updated_time" content="2019-06-16T15:39:31.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tag0610 - 練習用 callback 更改物件內容 &#x2F; 淺探 constructor、this、closure &#x2F; 練習 cs6 class">
 <meta name="twitter:description" content="看到了第5章 canvas 與特效動畫的章節。">
@@ -390,7 +390,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2019-06-16 23:34:34" itemprop="dateModified" datetime="2019-06-16T23:34:34+08:00">2019-06-16</time>
+                <time title="修改時間：2019-06-16 23:39:31" itemprop="dateModified" datetime="2019-06-16T23:39:31+08:00">2019-06-16</time>
               
             
           </span>
@@ -447,7 +447,7 @@
 <p>現在我們有一個顧客資料的物件，裡面有顧客的名字和設定顧客名字的方法。<br>※注意 <code>setUserName</code> 裡使用了 <code>this</code><br>現在要在外部用另一方法 <code>getUserInput()</code>，並把 <code>clientData.setUserName</code> 當作 <code>callback</code> 傳入其中使用，<br>好讓 <code>clientData.fullName</code> 改變成所指定的姓名。</p>
 <blockquote>
 <blockquote>
-<p>【p.s.使用外部函式改變物件的值的好處:】<br>我們可直接呼叫函式帶入參數 <code>clientData.setUserName(&quot;輸入姓&quot;,&quot;輸入名&quot;)</code> 將 <code>fullname</code> 設定好。<br>但現在我們希望有一個方法不只可以 <code>setUserName()</code>，還要回傳目前設定好的 <code>fullname</code>。<br>(一次做好兩件事)</p>
+<p>【p.s.使用外部函式改變物件的值的好處:】<br>我們可直接呼叫函式帶入參數 <code>clientData.setUserName(&quot;輸入姓&quot;,&quot;輸入名&quot;)</code> 將 <code>fullname</code> 設定好。<br>但現在我們希望有一個方法不只可以 <code>setUserName()</code>，還可以做其他更多的事~<br>(一次做好兩件↑事)</p>
 </blockquote>
 </blockquote>
 <h3 id="clientData物件、引用函式"><a href="#clientData物件、引用函式" class="headerlink" title="clientData物件、引用函式"></a>clientData物件、引用函式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> clientData = &#123;</span><br><span class="line">    id: <span class="string">"01"</span>,</span><br><span class="line">    fullName: <span class="string">"Not Set"</span>,</span><br><span class="line">    setUserName: <span class="function"><span class="keyword">function</span> (<span class="params">firstName, lastName</span>)  </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.fullName = firstName + <span class="string">" "</span> + lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserInput</span>(<span class="params">firstName, lastName, callback</span>)  </span>&#123;</span><br><span class="line">    callback (firstName, lastName);</span><br><span class="line">&#125;</span><br><span class="line">getUserInput (<span class="string">"firsthuman"</span>, <span class="string">"Adam"</span>, clientData.setUserName);</span><br><span class="line"><span class="built_in">console</span>.log (clientData.fullName);<span class="comment">// Not Set</span></span><br><span class="line"><span class="built_in">console</span>.log (<span class="built_in">window</span>.fullName); <span class="comment">// firsthuman Adam</span></span><br></pre></td></tr></table></figure>
