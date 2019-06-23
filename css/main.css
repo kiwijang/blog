@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ad40ff;
+  background: #69ff47;
 }
 .feed-link,
 .chat {
@@ -2505,6 +2505,10 @@ body::after {
   text-align: left;
   margin: 0px;
   margin-left: 30px;
+}
+img {
+  border: 5px solid #000;
+  margin: 5px;
 }
 .back-to-top.back-to-top-on {
   bottom: 30px;
