@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b51455;
+  background: #9e9d32;
 }
 .feed-link,
 .chat {
@@ -2544,12 +2544,12 @@ li p {
   background-color: #42ffe5;
 }
 .main-inner {
-  margin: 50px;
+  margin: 100px;
   margin-top: 0;
 }
 .header-inner {
   margin-top: 40px;
-  margin-left: 50px;
+  margin-left: 100px;
   margin-bottom: 10px;
   padding: 0px;
   border-bottom: 2px solid #000;
@@ -2676,10 +2676,6 @@ canvas#canvas {
   .site-nav-on {
     margin-left: 0;
   }
-  .header-inner {
-    margin: 30px auto;
-    width: 300px;
-  }
   .menu .menu-item .fa {
     margin-right: 10px !important;
   }
@@ -2687,14 +2683,6 @@ canvas#canvas {
   .main,
   #main {
     width: 100%;
-  }
-  .main-inner {
-    margin: 0;
-    padding: 10px;
-  }
-  .header-inner {
-    margin: 10px;
-    width: 300px;
   }
   body::after {
     content: "";
