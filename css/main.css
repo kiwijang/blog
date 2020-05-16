@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #57e440;
+  background: #ff58f1;
 }
 .feed-link,
 .chat {
@@ -2544,12 +2544,12 @@ li p {
   background-color: #42ffe5;
 }
 .main-inner {
-  margin: 100px;
+  margin: 8vw;
   margin-top: 0;
 }
 .header-inner {
   margin-top: 40px;
-  margin-left: 100px;
+  margin-left: 8vw;
   margin-bottom: 10px;
   padding: 0px;
   border-bottom: 2px solid #000;
