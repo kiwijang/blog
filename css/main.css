@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff58f1;
+  background: #e74132;
 }
 .feed-link,
 .chat {
@@ -2513,7 +2513,7 @@ body::after {
 .footer-inner {
   text-align: left;
   margin: 0px;
-  margin-left: 30px;
+  margin-left: 8vw;
 }
 .post-body img {
   border: 5px solid #000 !important;
