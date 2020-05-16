@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d4ff75;
+  background: #e9d44a;
 }
 .feed-link,
 .chat {
@@ -2479,6 +2479,7 @@ h4,
 h5,
 h6 {
   font-family: "微軟正黑體", "Segoe UI", monospace, sans-serif !important;
+  background-color: #f7f7f7;
 }
 pre {
   font-family: 'Source Code Pro', monospace;
@@ -2495,6 +2496,13 @@ body::after {
   border-bottom: 10px solid #42ffe5;
   pointer-events: none;
   z-index: 9999;
+}
+#ibuImg {
+  position: fixed;
+  right: 50px;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
 }
 #footer {
   color: #aaa;
@@ -2630,10 +2638,11 @@ li p {
 }
 .site-author-image {
   margin-top: 20px;
-  border: 2px double #ffff75;
+  border: 2px double #eee;
   border-radius: 50%;
 }
 .sidebar-inner {
+  background-color: #524f5b;
   height: 100%;
 }
 canvas#canvas {
@@ -2643,8 +2652,11 @@ canvas#canvas {
   top: 0;
   background-color: transparent;
 }
-@media screen and (max-width: 910px) {
+@media screen and (max-width: 1000px) {
   canvas#canvas {
+    display: none;
+  }
+  #ibuImg {
     display: none;
   }
 }
