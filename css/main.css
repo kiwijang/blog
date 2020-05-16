@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2eb54b;
+  background: #d4ff75;
 }
 .feed-link,
 .chat {
@@ -2489,9 +2489,10 @@ body::after {
   position: fixed;
   left: 0;
   top: 0;
-  width: 97.5% !important;
-  height: 95% !important;
-  border: 20px solid #fff67a;
+  width: 100% !important;
+  height: 97.5% !important;
+  border-top: 10px solid #42ffe5;
+  border-bottom: 10px solid #42ffe5;
   pointer-events: none;
   z-index: 9999;
 }
@@ -2521,7 +2522,6 @@ li strong {
   font-size: 16px;
   font-weight: 700;
   padding: 0 0 3px 0;
-  border-bottom: 3px solid #ccc;
 }
 li p {
   padding-left: 0px !important;
@@ -2533,7 +2533,7 @@ li p {
   bottom: 60px;
   padding-top: 10px;
   height: 55px;
-  background-color: #00514a;
+  background-color: #42ffe5;
 }
 .main-inner {
   margin: 50px;
@@ -2563,7 +2563,7 @@ li p {
 }
 .site-nav li:hover,
 .menu .menu-item a:hover {
-  background-color: #00514a;
+  background-color: #42ffe5;
   color: #fff !important;
 }
 .menu .menu-item a,
@@ -2613,8 +2613,8 @@ li p {
   text-align: left !important;
 }
 .btn {
-  background-color: #00514a;
-  border: 2px solid #000;
+  background-color: #42ffe5;
+  border: none;
 }
 .btn:hover {
   border-color: #c4bd40;
@@ -2625,12 +2625,12 @@ li p {
   width: 100%;
 }
 .menu-item-active a {
-  background-color: #00514a;
+  background-color: #42ffe5;
   color: #fff;
 }
 .site-author-image {
   margin-top: 20px;
-  background-color: #fff;
+  border: 2px double #ffff75;
   border-radius: 50%;
 }
 .sidebar-inner {
@@ -2692,7 +2692,6 @@ canvas#canvas {
     top: 0;
     width: 96.5% !important;
     height: 98% !important;
-    border: 6px solid #000;
     pointer-events: none;
     z-index: 9999;
   }
