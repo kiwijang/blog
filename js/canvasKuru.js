@@ -20,9 +20,9 @@ var canvas = document.getElementById("canvas"),
 
 canvas.width = width*ratio
 canvas.height = height*ratio
-canvas.style.width = width+"px"
+// context.style.width = width+"px"
 context.imageSmoothingEnabled = false
-context.fillStyle="rgba(255,255,255,0.4)"
+context.fillStyle="#f7f7f7"
 
 function animate(){
   draw()
