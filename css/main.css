@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e74132;
+  background: #8f2298;
 }
 .feed-link,
 .chat {
@@ -2492,8 +2492,8 @@ body::after {
   top: 0;
   width: 100% !important;
   height: 97.5% !important;
-  border-top: 10px solid #42ffe5;
-  border-bottom: 10px solid #42ffe5;
+  border-top: 10px solid #00f2d1;
+  border-bottom: 10px solid #00f2d1;
   pointer-events: none;
   z-index: 9999;
 }
@@ -2541,7 +2541,7 @@ li p {
   bottom: 60px;
   padding-top: 10px;
   height: 55px;
-  background-color: #42ffe5;
+  background-color: #00f2d1;
 }
 .main-inner {
   margin: 8vw;
@@ -2571,7 +2571,7 @@ li p {
 }
 .site-nav li:hover,
 .menu .menu-item a:hover {
-  background-color: #42ffe5;
+  background-color: #00f2d1;
   color: #fff !important;
 }
 .menu .menu-item a,
@@ -2621,7 +2621,7 @@ li p {
   text-align: left !important;
 }
 .btn {
-  background-color: #42ffe5;
+  background-color: #00f2d1;
   border: none;
 }
 .btn:hover {
@@ -2633,7 +2633,7 @@ li p {
   width: 100%;
 }
 .menu-item-active a {
-  background-color: #42ffe5;
+  background-color: #00f2d1;
   color: #fff;
 }
 .site-author-image {
@@ -2690,8 +2690,8 @@ canvas#canvas {
     position: fixed;
     left: 0;
     top: 0;
-    width: 96.5% !important;
-    height: 98% !important;
+    width: 100% !important;
+    height: 100% !important;
     pointer-events: none;
     z-index: 9999;
   }
