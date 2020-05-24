@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8f2298;
+  background: #ffa4ff;
 }
 .feed-link,
 .chat {
@@ -2493,7 +2493,6 @@ body::after {
   width: 100% !important;
   height: 97.5% !important;
   border-top: 10px solid #00f2d1;
-  border-bottom: 10px solid #00f2d1;
   pointer-events: none;
   z-index: 9999;
 }
@@ -2661,16 +2660,30 @@ canvas#canvas {
   }
 }
 @media screen and (max-width: 500px) {
-  .site-nav-toggle {
-    display: inline-block;
+  .main-inner {
+    margin-left: 1vw;
+  }
+  .header-inner {
+    margin-left: 5vw;
+    width: 90vw;
+  }
+  #header {
+    width: 100%;
+  }
+  .custom-logo-site-title .brand {
+    padding: 10px !important;
+  }
+  .site-nav-toggle button {
+    display: block;
     outline: none !important;
-    width: 50px;
+    box-shadow: 0 0 2px 1px #aaa;
+    width: 40px;
+    margin-top: 0;
     margin-left: 70vw;
-    background-color: #aaa;
-    border: 1px solid #000;
-    position: absolute !important;
-    top: 0px !important;
-    right: 0 !important;
+    background-color: #eee;
+    position: relative !important;
+    top: -9px !important;
+    right: -10px !important;
   }
   .site-nav,
   .site-nav-on {
@@ -2691,8 +2704,39 @@ canvas#canvas {
     left: 0;
     top: 0;
     width: 100% !important;
-    height: 100% !important;
+    border-bottom: none;
     pointer-events: none;
     z-index: 9999;
+  }
+}
+@media (max-width: 767px) and (min-width: 501px) {
+  .header-inner {
+    width: 80vw;
+  }
+  .site-nav-toggle {
+    display: block;
+    outline: none !important;
+    box-shadow: 0 0 2px 1px #aaa;
+    width: 40px;
+    margin-top: 0;
+    margin-left: 70vw;
+    background-color: #eee;
+    position: relative !important;
+    top: -95px !important;
+    right: -10px !important;
+  }
+  .site-nav {
+    position: absolute;
+    left: 0;
+    top: 52px;
+    margin: 0;
+    width: 80vw;
+    padding: 0;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 1030;
+  }
+  #menu li a i {
+    margin: 15px;
   }
 }
