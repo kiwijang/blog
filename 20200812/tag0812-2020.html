@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content=".hand { color: red; font-weight: 900; background-color: yellow;}  日記把ajax快速閱覽過一次了，後面提到 ajax順序">
-<meta name="keywords" content="AJAX">
+  <meta name="description" content=".showUp{ display: none;letter-spacing: 2px } input.s{margin: 0 auto;width: 150px; height: 30px;font-size:12px; background-color:#eee; border: 1px solid #aaa; color: #aaa;padding: 0 10px;letter-spacin">
+<meta name="keywords" content="學習日記,工作紀錄">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tag0509 - 初探 ajax">
-<meta property="og:url" content="http://yoursite.com/blog/20190509/tag0509.html">
+<meta property="og:title" content="tag0812-2020">
+<meta property="og:url" content="http://yoursite.com/blog/20200812/tag0812-2020.html">
 <meta property="og:site_name" content="需要 P*P HHW 能量">
-<meta property="og:description" content=".hand { color: red; font-weight: 900; background-color: yellow;}  日記把ajax快速閱覽過一次了，後面提到 ajax順序">
+<meta property="og:description" content=".showUp{ display: none;letter-spacing: 2px } input.s{margin: 0 auto;width: 150px; height: 30px;font-size:12px; background-color:#eee; border: 1px solid #aaa; color: #aaa;padding: 0 10px;letter-spacin">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2020-08-12T04:41:42.637Z">
+<meta property="og:updated_time" content="2020-08-12T08:38:44.133Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tag0509 - 初探 ajax">
-<meta name="twitter:description" content=".hand { color: red; font-weight: 900; background-color: yellow;}  日記把ajax快速閱覽過一次了，後面提到 ajax順序">
+<meta name="twitter:title" content="tag0812-2020">
+<meta name="twitter:description" content=".showUp{ display: none;letter-spacing: 2px } input.s{margin: 0 auto;width: 150px; height: 30px;font-size:12px; background-color:#eee; border: 1px solid #aaa; color: #aaa;padding: 0 10px;letter-spacin">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/blog/20190509/tag0509">
+  <link rel="canonical" href="http://yoursite.com/blog/20200812/tag0812-2020">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>tag0509 - 初探 ajax | 需要 P*P HHW 能量</title>
+  <title>tag0812-2020 | 需要 P*P HHW 能量</title>
   
 
 
@@ -332,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/blog/20190509/tag0509.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/blog/20200812/tag0812-2020.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Naomi">
@@ -349,7 +349,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">tag0509 - 初探 ajax
+          <h1 class="post-title" itemprop="name headline">tag0812-2020
 
               
             
@@ -375,24 +375,12 @@
                 
               
 
-              <time title="創建時間：2019-05-09 14:31:18" itemprop="dateCreated datePublished" datetime="2019-05-09T14:31:18+08:00">2019-05-09</time>
+              <time title="創建時間：2020-08-12 12:51:29 / 修改時間：16:38:44" itemprop="dateCreated datePublished" datetime="2020-08-12T12:51:29+08:00">2020-08-12</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新於</span>
-                
-                <time title="修改時間：2020-08-12 12:41:42" itemprop="dateModified" datetime="2020-08-12T12:41:42+08:00">2020-08-12</time>
               
             
           </span>
@@ -444,67 +432,31 @@
       
 
       
-        <p><style>.hand { color: red; font-weight: 900; background-color: yellow;} </style></p>
-<h2 id="日記"><a href="#日記" class="headerlink" title="日記"></a>日記</h2><h3 id="把ajax快速閱覽過一次了，後面提到-ajax順序"><a href="#把ajax快速閱覽過一次了，後面提到-ajax順序" class="headerlink" title="把ajax快速閱覽過一次了，後面提到 ajax順序"></a>把ajax快速閱覽過一次了，後面提到 ajax順序</h3><a id="more"></a>
-<ul>
-<li><p>ajax順序</p>
-<ol start="0">
-<li><strong>創建請求對象</strong><br>(從瀏覽器API new一個XMLHttpRequest())<br>書中還有做不同瀏覽器的請求判斷.. 如果是微軟舊的瀏覽器要 new 這個..(難怪有人這麼討厭xD)<br>new ActiveXObject(“Msxml2.XMLHTTP”)<br>new ActiveXObject(“Microsoft.XMLHTTP”)<br>→ </li>
-<li><span class="hand">☞</span> request = new XMLHttpRequest() &lt;- 存成全域變數，回調函數才可使用<br>請求對象的準備狀態，<br>存在 readyState 屬性中<br><strong>readyState: 0</strong><br><strong>連結尚未初始化</strong><br>→</li>
-<li><strong>回調函數</strong><br><span class="hand">☞</span> <strong>request.open(“GET”,url,true)</strong><br>————-如何連接?連去哪?同步(true)/異步(false)<br><strong>readyState: 1</strong><br><strong>連結初始化:請求已準備好可以發送</strong><br>→</li>
-<li><span class="hand">☞</span> <strong>request.send(null)</strong><br>(給伺服器)—–這邊設定伺服器回傳null<br><strong>readyState: 2</strong><br><strong>(伺服器正在處理請求)</strong><br>→</li>
-<li><strong>readyState: 3</strong><br><strong>(得到伺服器響應)</strong><br>數據下載到請求對象(瀏覽器)，但響應還沒完全準備好，還不能使用<br>→</li>
-<li><strong>readyState: 4</strong><br><strong>(伺服器響應準備就緒)</strong><br>伺服器處理完請求，數據可以使用了</li>
-</ol>
-<p>6.<span class="hand">☞</span> 利用<strong>request.onreadystatechange = function executeMe(){}</strong>每次readyState改變時就會執行這個指定的函數。<br>  可用 readyState 1.2.3.4 來在不同階段執行想設定執行的函數<br>  ex. 以 request.readyState ==4、request.status ===200 判斷式，來對已接收完成的資料作運用，然後<br>  <span class="hand">☞</span> <strong>request.responseText 取得回傳的文本</strong></p>
-<blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox"> .responseText 對沒接觸伺服器端過的我來說很抽象，待補坑。</li>
-</ul>
-</blockquote>
-<p>  <strong>XMLHttpRequest物件(對象)</strong></p>
-<blockquote>
-<p>的屬性有:readyState、responseXML、responsText、onreadystatechange、statusText、status<br>服務器響應會存在 <strong>responseText</strong> 中。通常是文本，不過也可以是XML數據。</p>
-</blockquote>
-</li>
-<li><p>事件處理程序(用addEventListener()DOM2中可為單個事件指定多個事件處理程序)</p>
-</li>
-<li><ul>
-<li style="list-style: none"><input type="checkbox"> 異步應用<blockquote>
-<p>有夠難，說了一個表單要異步2次，中間埋了一個監聽器函數、來確認異步伺服器回傳後是否都通過標準、最後submit送出鈕也發了一個同步請求，意味著資料送達伺服器前你都要等待完才能做別的事，這時怕太無聊他在<strong>同步請求前</strong>運行一個setInterval(撥放圖片,50)，雖然不能做別的事，但是畫面50ms會撥放一張圖)</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>DOM操作</li>
-<li>XML</li>
-<li>CSV</li>
-<li>JSON <blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox"> eavl()、<strong>JSON.parse()</strong>，不熟</li>
-</ul>
-</blockquote>
-</li>
-<li>表單驗證(表達式應用)</li>
-<li>POST<blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox"> 對瀏覽器端得請求解碼要使用:<br><strong>setRequestHeader()</strong> 伺服器用響應首部向瀏覽器發送訊息。<br>setRequestHeader(“Content-Type”,”applocation/x-www-form-urlencoded”) 告訴伺服器收到名/值，類似於     Web 表單提交時發送的名/值。</li>
-</ul>
-</blockquote>
-</li>
-<li>開一 utils.js 放常用到的小工具函式(藉此增加自己常用的函式庫)    </li>
-</ul>
-<hr>
-<h3 id="覺得-JSON-和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好"><a href="#覺得-JSON-和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好" class="headerlink" title="覺得 JSON 和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好.."></a>覺得 JSON 和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好..</h3><ul>
-<li style="list-style: none"><input type="checkbox" checked> 先看完 ajax 這本書</li>
-<li style="list-style: none"><input type="checkbox"> 要補一下 Promise 和 ajax 更多細節…<blockquote>
-<p><a href="http://jazzlion.github.io/2016/06/18/Javascript%E7%9A%84%E9%9D%9E%E5%90%8C%E6%AD%A5%E4%B9%8B%E6%97%85-Part-I/" target="_blank" rel="noopener">Javascript的非同步之旅</a><br><a href="http://jazzlion.github.io/2016/07/20/%E6%B7%BA%E8%AB%87%E9%9D%9E%E5%90%8C%E6%AD%A5%E8%BC%89%E5%85%A5script/" target="_blank" rel="noopener">淺談非同步載入script</a><br><a href="https://openhome.cc/Gossip/ECMAScript/index.html" target="_blank" rel="noopener">語言技術：ECMAScript Essence</a></p>
-</blockquote>
-</li>
-<li style="list-style: none"><input type="checkbox"> 表單製作</li>
-<li style="list-style: none"><input type="checkbox"> Wes 第6課</li>
-<li style="list-style: none"><input type="checkbox"> 課程後 50% xD</li>
-</ul>
+        
+<style>
+.showUp{ display: none;letter-spacing: 2px }
+input.s{margin: 0 auto;width: 150px; height: 30px;font-size:12px; background-color:#eee; border: 1px solid #aaa; color: #aaa;padding: 0 10px;letter-spacing: 1px;outline: none; transition: 1s}
+input:hover,input:focus{
+  background-color: #7f7f7f
+}
+</style>
+
+
+<p>工作半年了! 紀錄一下心得。<br><a id="more"></a></p>
+<p><div style="width: 100%"></div></p>
+<p><input class="s" type="text" name="wow" value="秘密.."><br>  <div class="showUp"><h2>人生中的第一次 KPI 約談</h2><p>2020/8/11 經歷人生中的第一次 KPI 約談，與經理一對一談話<br>待的部門是開發部，專案有分開發專案和系統專案<br>開發專案只是跟其他部門推廣用的(幫別部門翻新舊系統變成 asp.net core 和 angular 架構)<br>系統專案就是真的有 PM、SA、QA、RD 等一起開發新系統<br>現在只寫過開發專案的兩個前端功能畫面<br>經理跟我說等三四個專案完就會把人轉出去別的部門<br>我問有什麼準備方向 他說除了要對基礎框架熟悉以外<br>還要知道如何把做好的系統放到 VM 上 ，而 docker 現在只有一個部門在用</p><p>談完後跟同事說我覺得超可怕的QQ<br>同事很有遠見的跟我說不用去記每一行程式碼是怎麼寫的<br>要去記整個架構、流程，知道什麼東西會去哪，不要太執著在技術<br>因為其他部門不一定是用我們科的技術，<br>主要是要知道想要這個功能要往哪裡找，你就會寫了</p><p>真心覺得有同事可以問問題真是太幸運了QQ</p><p>覺得我一點也不在乎 KPI<br>比較在乎的是能不能在做專案和轉部門時繼續活著</p><p>然後真的覺得可以報名到程式導師計畫真是太幸運了<br>至少我會有些常識可以應戰 也覺得要是失敗了也不怕找不到工作xD</p><h2>參加導師計畫與參與專案</h2><p>截至今日我交了 w1-w4、w6 作業，從 w1 的 CLI、Git、w2/w3 的 OJ、w4 的網路概論與接 API、w6 的 SEO、CSS 面試題、切版、w7 的 JS 事件<br>覺得有入門的機會蠻好的 我一定要把握好這些稍縱即逝的機會!!<br>專案的話接觸到 RWD 感覺很棒，要把 SASS 的 @media query 整理起來才行!!<br>想辦法讓自己下一次速度更快!!!</p></div><br><script>
+var showHide = function (e){this.e = e;console.log(e.target.value);
+if(e.target.value === 'wow'){
+  console.log('hi');
+  console.log(document.getElementsByClassName('showUp')[0]);
+  document.getElementsByClassName('showUp')[0].style.display='block'
+}else{
+  document.getElementsByClassName('showUp')[0].style.display='none';
+}};
+  var el=document.getElementsByName('wow');
+  el[0].addEventListener("keyup", showHide);
+  el[0].addEventListener("focus", function(){this.select()});
+</script></p>
 
       
     </div>
@@ -528,7 +480,9 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/AJAX/" rel="tag"># AJAX</a>
+            <a href="/blog/tags/學習日記/" rel="tag"># 學習日記</a>
+          
+            <a href="/blog/tags/工作紀錄/" rel="tag"># 工作紀錄</a>
           
         </div>
       
@@ -541,15 +495,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/blog/20200524/tag0524-2020.html" rel="next" title="tag0524_2020">
+                <i class="fa fa-chevron-left"></i> tag0524_2020
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/20190511/hello-world.html" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -730,7 +684,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#日記"><span class="nav-number">1.</span> <span class="nav-text">日記</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#把ajax快速閱覽過一次了，後面提到-ajax順序"><span class="nav-number">1.1.</span> <span class="nav-text">把ajax快速閱覽過一次了，後面提到 ajax順序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#覺得-JSON-和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好"><span class="nav-number">1.2.</span> <span class="nav-text">覺得 JSON 和後端的傳送文件太抽象難懂，先多看文章，然後先從練習表單製作開始會比較好..</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">人生中的第一次 KPI 約談</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">參加導師計畫與參與專案</span></a></li></ol></div>
             
 
           </div>
