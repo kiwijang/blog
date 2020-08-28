@@ -97,17 +97,22 @@
 
 
   <meta name="description" content="當出現 CORS 的錯誤時，可以往哪裡找?為什麼會發生這個錯誤?">
-<meta name="keywords" content="學習日記">
+<meta name="keywords" content="學習日記,CORS,Same Origin Policy,http request、http response">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tag0812-2020-關於 Same Origin Policy(同源政策)、CORS(跨來源資源共享)、preflight request(預檢請求)">
 <meta property="og:url" content="http://yoursite.com/blog/20200812/tag0812-2020-CORS.html">
 <meta property="og:site_name" content="需要 P*P HHW 能量">
 <meta property="og:description" content="當出現 CORS 的錯誤時，可以往哪裡找?為什麼會發生這個錯誤?">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2020-08-12T13:39:03.187Z">
+<meta property="og:image" content="https://i.imgur.com/oCpjqx3.png">
+<meta property="og:image" content="https://i.imgur.com/TCVNcm3.png">
+<meta property="og:image" content="https://i.imgur.com/bO6QBYv.png">
+<meta property="og:image" content="https://i.imgur.com/qTbmLEo.png">
+<meta property="og:updated_time" content="2020-08-28T13:24:23.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tag0812-2020-關於 Same Origin Policy(同源政策)、CORS(跨來源資源共享)、preflight request(預檢請求)">
 <meta name="twitter:description" content="當出現 CORS 的錯誤時，可以往哪裡找?為什麼會發生這個錯誤?">
+<meta name="twitter:image" content="https://i.imgur.com/oCpjqx3.png">
 
 
 
@@ -375,12 +380,24 @@
                 
               
 
-              <time title="創建時間：2020-08-12 21:28:25 / 修改時間：21:39:03" itemprop="dateCreated datePublished" datetime="2020-08-12T21:28:25+08:00">2020-08-12</time>
+              <time title="創建時間：2020-08-12 21:28:25" itemprop="dateCreated datePublished" datetime="2020-08-12T21:28:25+08:00">2020-08-12</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2020-08-28 21:24:23" itemprop="dateModified" datetime="2020-08-28T21:24:23+08:00">2020-08-28</time>
               
             
           </span>
@@ -433,7 +450,35 @@
 
       
         <h2 id="當出現-CORS-的錯誤時，可以往哪裡找-為什麼會發生這個錯誤"><a href="#當出現-CORS-的錯誤時，可以往哪裡找-為什麼會發生這個錯誤" class="headerlink" title="當出現 CORS 的錯誤時，可以往哪裡找?為什麼會發生這個錯誤?"></a>當出現 CORS 的錯誤時，可以往哪裡找?為什麼會發生這個錯誤?</h2><a id="more"></a>
-<h2 id="Same-origin-policy-是什麼"><a href="#Same-origin-policy-是什麼" class="headerlink" title="Same origin policy 是什麼?"></a>Same origin policy 是什麼?</h2><h2 id="CORS-是什麼"><a href="#CORS-是什麼" class="headerlink" title="CORS 是什麼?"></a>CORS 是什麼?</h2><h2 id="Preflight-Request-是什麼"><a href="#Preflight-Request-是什麼" class="headerlink" title="Preflight Request 是什麼?"></a>Preflight Request 是什麼?</h2><p>Preflight Request 原來是為了…<br>request 完回來的 response，雖然因 CORS 被瀏覽器攔截，<br>但其實這個請求已經被接收、已經對 Server 造成影響(也許對 db 改資料了)<br>所以才會先來一個 Preflight Request 確認是否有 CORS(cross origin resource sharing) 問題，<br>有的話就不會發接下來的 request，這樣就不會造成已經到 Server、東西回來還被瀏覽器擋不見…<br>沒有的話就照常發 request<br>可是這樣每次都要先檢查好像很神經質<br>所以把請求分成簡單請求和預檢請求<br>檢查會發生 CORS 的請求，而不是通通都檢查<br>(不是像韓國那樣全國普篩，而是像台灣現在菲律賓歸國的特別篩…)</p>
+<p>CORS policy 是什麼為什麼會被他擋? 為什麼每次請求都多一個 OPTIONS?</p>
+<h2 id="Same-origin-policy-是什麼"><a href="#Same-origin-policy-是什麼" class="headerlink" title="Same origin policy 是什麼?"></a>Same origin policy 是什麼?</h2><p>同源政策規定：「同源」的資源才可相互存取，跨來源的資源則必須在某些特定情況下，才允許存取。</p>
+<p>原因是基於安全性考量，所以程式碼所發出的跨來源 HTTP 請求會受到限制。</p>
+<p>譬如，XMLHttpRequest 及 Fetch 都遵守同源政策（same-origin policy）。</p>
+<p>瀏覽器受此規範影響，所使用的 API 除非使用 CORS 標頭，否則只能請求與應用程式相同網域的 HTTP 資源。</p>
+<h3 id="自己家的小孩要自己打"><a href="#自己家的小孩要自己打" class="headerlink" title="自己家的小孩要自己打"></a>自己家的小孩要自己打</h3><p>「同源政策」(Same Origin Policy) 是網站安全的基礎，又分為兩種：<br>DOM 的同源政策<br>Cookie 的同源政策</p>
+<p>資料來源：</p>
+<ul>
+<li><a href="https://web.dev/cross-origin-resource-sharing/" target="_blank" rel="noopener">Web.dev - Cross-Origin Resource Sharing (CORS)</a></li>
+<li><a href="https://medium.com/@jaydenlin/same-origin-policy-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96-%E4%B8%80%E5%88%87%E5%AE%89%E5%85%A8%E7%9A%84%E5%9F%BA%E7%A4%8E-36432565a226" target="_blank" rel="noopener">Same Origin Policy 同源政策 ! 一切安全的基礎</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Origin" target="_blank" rel="noopener">Origin</a></li>
+</ul>
+<h2 id="CORS-Cross-Origin-Resource-Sharing-跨域資源共享"><a href="#CORS-Cross-Origin-Resource-Sharing-跨域資源共享" class="headerlink" title="CORS(Cross-Origin Resource Sharing) 跨域資源共享"></a>CORS(Cross-Origin Resource Sharing) 跨域資源共享</h2><p>是一種使用額外 HTTP header 讓目前瀏覽器取得存取其他來源（網域）伺服器特定資源權限的機制。</p>
+<p>當瀏覽器請求一個不是目前文件來源時(例如來自於不同網域(domain)、通訊協定(protocol)或通訊埠(port)的資源) ，會建立一個跨來源 HTTP 請求(cross-origin HTTP request)。</p>
+<p>為了避免已經 request 和 response，但中間因為不符合 CORS 造成 response 無法顯示出來。(但已經到 server 端進行某些動作、或到 db 改過東西了)，所以 CORS 在發出請求前要先檢查: 你們有沒有在同一個網域?</p>
+<p>CORS 把請求分為簡單請求與預檢請求。</p>
+<p><img src="https://i.imgur.com/oCpjqx3.png" alt><br>每一個請求的 header 都會帶有一個<br>「Origin: 你的請求網域或IP」<br>而你的網域要符合 server 的設定才行。如「 Access-Control-Allow-Origin: *」</p>
+<h2 id="Preflight-Request-是什麼"><a href="#Preflight-Request-是什麼" class="headerlink" title="Preflight Request 是什麼?"></a>Preflight Request 是什麼?</h2><p>當符合某些條件時就會有預檢請求。</p>
+<ul>
+<li>A request that uses methods other than GET, POST, or HEAD</li>
+<li>A request that includes headers other than Accept, Accept-Language or Content-Language</li>
+<li>A request that has a Content-Type header other than application/x-www-form-urlencoded, multipart/form-data, or text/plain</li>
+</ul>
+<p><img src="https://i.imgur.com/TCVNcm3.png" alt></p>
+<h2 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h2><p><img src="https://i.imgur.com/bO6QBYv.png" alt><br>圖源: <a href="https://web.dev/cross-origin-resource-sharing/" target="_blank" rel="noopener">Web.dev - Cross-Origin Resource Sharing (CORS)</a></p>
+<p>請求回應就像傳遞一張紙條，紙條內分成 header 與 body，而 header 記載紙條的相關資訊(譬如:紙條是什麼類型、以什麼編碼的)。<br>header 以 key-value 的方式來紀載。<br>請求和回應會有不同的資訊。</p>
+<p><img src="https://i.imgur.com/qTbmLEo.png" alt><br>圖源: <a href="https://web.dev/cross-origin-resource-sharing/" target="_blank" rel="noopener">Web.dev - Cross-Origin Resource Sharing (CORS)</a></p>
+<h2 id="當出現-CORS-的錯誤時，可以往哪裡找-為什麼會發生這個錯誤-1"><a href="#當出現-CORS-的錯誤時，可以往哪裡找-為什麼會發生這個錯誤-1" class="headerlink" title="當出現 CORS 的錯誤時，可以往哪裡找?為什麼會發生這個錯誤?"></a>當出現 CORS 的錯誤時，可以往哪裡找?為什麼會發生這個錯誤?</h2><h3 id="當出現-CORS-的錯誤時，可以往哪裡找"><a href="#當出現-CORS-的錯誤時，可以往哪裡找" class="headerlink" title="當出現 CORS 的錯誤時，可以往哪裡找?"></a>當出現 CORS 的錯誤時，可以往哪裡找?</h3><p>看看 server 的標頭 Access-Control-Allow-Origin (白名單) 有沒有開放這個網域的存取。</p>
+<h3 id="為什麼會發生這個錯誤"><a href="#為什麼會發生這個錯誤" class="headerlink" title="為什麼會發生這個錯誤?"></a>為什麼會發生這個錯誤?</h3><p>因為根據同源政策，不允許跨網域存取資源。</p>
 
       
     </div>
@@ -459,6 +504,12 @@
           
             <a href="/blog/tags/學習日記/" rel="tag"># 學習日記</a>
           
+            <a href="/blog/tags/CORS/" rel="tag"># CORS</a>
+          
+            <a href="/blog/tags/Same-Origin-Policy/" rel="tag"># Same Origin Policy</a>
+          
+            <a href="/blog/tags/http-request、http-response/" rel="tag"># http request、http response</a>
+          
         </div>
       
 
@@ -479,10 +530,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/20200812/tag0812-2020-RWD.html" rel="prev" title="tag0812-2020-關於 RWD">
-                tag0812-2020-關於 RWD <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -553,7 +600,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">文章</span>
                   </a>
                 </div>
@@ -625,7 +672,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">15</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">標籤</span>
                   </a>
                 </div>
@@ -663,7 +716,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#當出現-CORS-的錯誤時，可以往哪裡找-為什麼會發生這個錯誤"><span class="nav-number">1.</span> <span class="nav-text">當出現 CORS 的錯誤時，可以往哪裡找?為什麼會發生這個錯誤?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Same-origin-policy-是什麼"><span class="nav-number">2.</span> <span class="nav-text">Same origin policy 是什麼?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CORS-是什麼"><span class="nav-number">3.</span> <span class="nav-text">CORS 是什麼?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Preflight-Request-是什麼"><span class="nav-number">4.</span> <span class="nav-text">Preflight Request 是什麼?</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#當出現-CORS-的錯誤時，可以往哪裡找-為什麼會發生這個錯誤"><span class="nav-number">1.</span> <span class="nav-text">當出現 CORS 的錯誤時，可以往哪裡找?為什麼會發生這個錯誤?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Same-origin-policy-是什麼"><span class="nav-number">2.</span> <span class="nav-text">Same origin policy 是什麼?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自己家的小孩要自己打"><span class="nav-number">2.1.</span> <span class="nav-text">自己家的小孩要自己打</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CORS-Cross-Origin-Resource-Sharing-跨域資源共享"><span class="nav-number">3.</span> <span class="nav-text">CORS(Cross-Origin Resource Sharing) 跨域資源共享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Preflight-Request-是什麼"><span class="nav-number">4.</span> <span class="nav-text">Preflight Request 是什麼?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Header"><span class="nav-number">5.</span> <span class="nav-text">Header</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#當出現-CORS-的錯誤時，可以往哪裡找-為什麼會發生這個錯誤-1"><span class="nav-number">6.</span> <span class="nav-text">當出現 CORS 的錯誤時，可以往哪裡找?為什麼會發生這個錯誤?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#當出現-CORS-的錯誤時，可以往哪裡找"><span class="nav-number">6.1.</span> <span class="nav-text">當出現 CORS 的錯誤時，可以往哪裡找?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#為什麼會發生這個錯誤"><span class="nav-number">6.2.</span> <span class="nav-text">為什麼會發生這個錯誤?</span></a></li></ol></li></ol></div>
             
 
           </div>

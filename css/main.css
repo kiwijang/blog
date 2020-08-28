@@ -1759,7 +1759,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0466af;
+  background: #0d2a01;
 }
 .feed-link,
 .chat {
@@ -2591,7 +2591,6 @@ li p {
 }
 .posts-expand .post-body h2 {
   border-bottom: 3px solid #c4bd40;
-  display: inline-block;
 }
 .posts-expand .post-body h3 {
   border-left: 10px solid #c4bd40;
