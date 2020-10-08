@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="油 斷 大 敵 (揮木刀)這裡是寫給自己看的筆記小心使用">
+  <meta name="description" content="接手別人專案心得">
 <meta name="keywords" content="javascript, html, css, c#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tag1008-2020">
 <meta property="og:url" content="http://yoursite.com/blog/20201008/tag1008-2020.html">
 <meta property="og:site_name" content="需要 P*P HHW 能量">
-<meta property="og:description" content="油 斷 大 敵 (揮木刀)這裡是寫給自己看的筆記小心使用">
+<meta property="og:description" content="接手別人專案心得">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2020-10-07T23:37:18.262Z">
+<meta property="og:updated_time" content="2020-10-08T00:49:11.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tag1008-2020">
-<meta name="twitter:description" content="油 斷 大 敵 (揮木刀)這裡是寫給自己看的筆記小心使用">
+<meta name="twitter:description" content="接手別人專案心得">
 
 
 
@@ -384,6 +384,24 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/工作紀錄/" itemprop="url" rel="index"><span itemprop="name">工作紀錄</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -412,7 +430,23 @@
       
 
       
-        
+        <h2 id="接手別人專案心得"><a href="#接手別人專案心得" class="headerlink" title="接手別人專案心得"></a>接手別人專案心得</h2><a id="more"></a>
+<p>到目前為止，做的專案都是從別人手中接手(兩個專案)，<br>想把心得記錄一下，下次遇到就可以比較上手:</p>
+<h3 id="接手的人"><a href="#接手的人" class="headerlink" title="接手的人"></a>接手的人</h3><p>心理狀態: 沒有參與感、不知道目前分工狀態、與整個專案流程。<br>一開始找東西真的蠻辛苦的，欄位、sp、table，<br>最煩的是在找的時候一直有修改需求進來，<br>覺得挑戰在如何在被打斷後，同時進行多項目修改，<br>我都會利用 stash 把正在修改的 stash 起來，<br>先修好修的，修完發 pr，之後再繼續處理 stash 起來的東西。</p>
+<p>所以覺得在找東西的時候有人幫忙給找的東西起個頭會很有幫助，<br>譬如有東西壞掉會先把 table 的名字貼給你說東西在哪。</p>
+<p>然後脾氣真的要好一點，要隨時保有一顆感恩的心(社畜一點)。<br>一開始會想區分哪邊是誰負責的，但後來發現如果有影響就通通改，<br>不要區分壞掉的部分是誰做的(找戰犯)會讓心理比較好過(少點怪罪多點積極，反正我就爛，壞掉就修就好)</p>
+<p>常常有東西壞掉不是自己造成的，譬如前一天才改好，結果隔天就壞了，原因是 db 欄位大小偷改沒有講，<br>這時候要先看錯誤代碼是哪裡來的?是 c# 的話就在 .net 的 console log 視窗裡找錯誤提示，<br>這邊的提示有時是 C# 出錯有時是 sql 出錯(我還沒分出差別)，<br>總之要確認前後端傳遞的值有沒有正確、然後去看 sp 有沒有把資料存進對應的 table，<br>慢慢找就會找到錯的地方了。</p>
+<p>通常會出錯的地方就在…</p>
+<ol>
+<li>前端有個欄位傳到 c# 的值是 null 然後前端就會讓後端爆掉(如果後端沒有檢查 null 值並做處理)。<br>angular 的 formcontrol 如果那個欄位 status 是 invaild 值會是 null(disabled 也會讓 value invaild)。<br>可以用 <code>getRawValue()</code> 取得所有值。(這樣做的話，如果不是普通的 user (by 寧疆老師)，<br>可以直接 F12 把 disabled 拿掉，給這個欄位錯的值，後端如果沒有根據流程限制去擋的話就糟了，錯誤的值就會存到 db 了xD)<br>(聽說 kotlin 沒有 fxxxing null exception? 那我一定要來試試xD)</li>
+<li>前端傳後端 c# 物件的值直接是空的。那就是 model 驗證有欄位沒有過，就直接整個 model 為 null。<br>如果這個 service 沒有做模型驗證的話 null 就會一路往下傳到壞掉xddd</li>
+<li>如果錯誤提示是 error convert varchar to decimel 之類的，要檢查你在 c# 給 sp 的參數型態有沒有給對，<br>沒有給對就到 sql 去找 sp 的欄位大小是否對應到 c#? 有沒有把資料存進 db?(就是去檢查到底是 sp 哪個地方出錯)</li>
+</ol>
+<p>小結就是前後端都要根據流程去擋資料(檢查資料)的給予，不然 null 大魔王總是時不時冒出來砍你www。</p>
+<h3 id="交接給別人的人、team-leader"><a href="#交接給別人的人、team-leader" class="headerlink" title="交接給別人的人、team leader"></a>交接給別人的人、team leader</h3><p>交接給我的人花了三個下午跟講他寫的程式的結構，讓我知道東西在哪、可以去哪找。<br>我大概花了一個禮拜去習慣找東西。<br>交接的人應該要有東西交給你了、you can do it、有問題問我都 ok!的氣慨。<br>如果我是交接的人還會去看後來的人改了哪些地方，因為東西主體是我寫的，雖然有始沒終，<br>但是可以知道錯在哪裡，然後也會去跟寫的人討論那些地方改的不錯，<br>如果有時間也會多使用各種功能測試看看，因為接手的人對使用功能的流程不熟，<br>很多地方沒辦法測試到，拼裝車對系統的穩定性絕對是不利的，只能多測試、盡量多想想使用者的情境讓系統更穩定。</p>
+<p>team leader 除了辛苦的 code review (檢查修改者對系統的錯誤提示在修改過程有沒有誤刪?<br>某個修改者的修改，會不會引響到其他修改者的功能?)，我覺得掌握全局真的很不容易，更不容易的是你在龐大壓力下<br>(夾在 user 和 rd 們之間)，要如何安撫兩邊、並朝著讓系統更穩定去努力，除了技術涵養要高、會鼓勵人、<br>會時程管理(讓 rd 少做多餘的事，譬如容忍 user 不斷提修改要求)、控制自己的脾氣(有同理心去思考不同人的立場)、<br>東西壞掉如何分工作修改(不要找戰犯，而是讓大家有共同目標去讓系統更穩固)…</p>
+<p>感覺自己離 team leader 還有一大段距離要追呢。<br>若把狀態分成四種: 有技術沒脾氣、有技術有脾氣、沒技術有脾氣、沒技術沒脾氣。<br>覺得自己是沒技術，所以一定要沒脾氣。<br>希望自己總有一天可以變成有技術沒脾氣的 team leader!<br>堅強起來才不會失去溫柔，加油^^</p>
+
       
     </div>
 
@@ -494,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -617,6 +660,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#接手別人專案心得"><span class="nav-number">1.</span> <span class="nav-text">接手別人專案心得</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#接手的人"><span class="nav-number">1.1.</span> <span class="nav-text">接手的人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交接給別人的人、team-leader"><span class="nav-number">1.2.</span> <span class="nav-text">交接給別人的人、team leader</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
