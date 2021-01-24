@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-TW">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-pp.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-pp.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="覺得要把去年開始遇到的狗屎事記錄在這裡…(負能量注意)">
+<meta name="keywords" content="javascript, html, css, c#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sharepoint 2016 接手系統紀錄">
+<meta property="og:url" content="http://yoursite.com/blog/20210124/tag0124-2021.html">
+<meta property="og:site_name" content="需要 P*P HHW 能量">
+<meta property="og:description" content="覺得要把去年開始遇到的狗屎事記錄在這裡…(負能量注意)">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2021-01-24T11:57:20.219Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sharepoint 2016 接手系統紀錄">
+<meta name="twitter:description" content="覺得要把去年開始遇到的狗屎事記錄在這裡…(負能量注意)">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/blog/20210124/tag0124-2021">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>sharepoint 2016 接手系統紀錄 | 需要 P*P HHW 能量</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    
+      <div id="ibuImg">
+        <img itemprop="image" src="/blog/images/ibuImg.gif" alt="ibu">
+      </div>
+    
+    
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">需要 P*P HHW 能量</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">那朵雲看起來像一隻企鵝 ぺたぺたっ ぺったんと</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>標籤</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分類</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/blog/20210124/tag0124-2021.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="naomi">
+      <meta itemprop="description" content="油 斷 大 敵 (揮木刀)<br>這裡是寫給自己看的筆記<br>小心使用">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="需要 P*P HHW 能量">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">sharepoint 2016 接手系統紀錄
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2021-01-24 17:07:31" itemprop="dateCreated datePublished" datetime="2021-01-24T17:07:31+08:00">2021-01-24</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/工作紀錄/" itemprop="url" rel="index"><span itemprop="name">工作紀錄</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>覺得要把去年開始遇到的狗屎事記錄在這裡…(負能量注意)</p>
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>sharepoint 2016 是去年調到金控的 Oxx 留下的毒瘤…<br>我怎麼會說這是毒瘤呢?請讓我娓娓道來…<br>我到職後第 4 個月，E 前輩要調去別的部門，<br>於是坐在經理旁邊的菜鳥(我)，就「順便」接手了 E 前輩的東西。<br>簡單描述一下(我看到的)E 前輩之於此系統的關西， 1.接手 Oxx 的系統 2.去恆毅上過 sharepoint 的課 3.手動刪除 log 檔案 4.非常討厭 P 經理，說經理什麼都不知道</p>
+<p>在我接手此系統時遇到的問題有:<br>log 造成磁碟太滿…要手動上去 server 清…<br>經理希望此系統下架…<br>然後我對此系統什麼都不知道…<br>(不知道: server 有哪些?使用者有哪些?功能的使用流量?這個系統的用途是什麼?)</p>
+<p>然後照我們公司冗長的行事作風:<br>花了一個禮拜寫電聯單申請環境(AP、UAT)的 VDI，<br>花了一個禮拜跟我交接東西，<br>E 前輩帶我用我電腦跟我說明:<br>先跟 NTA 用 jabber 溝通幫忙登入 AP 環境(先遠用 VMware 登入可登入 AP 的主機，再遠端連到 AP 上)<br>然後進去某個資料夾清裡面的 log 檔案………<br>(乾 那時我連 NTA 是啥都不知道，就網管拉<br>幹，難怪聽聞隔壁科下去 6 個不久後都離職，<br>在這個年代，連一個能跟下屬說明公司部門的分工職責的經理都沒有，<br>反正我們公司很有錢，有錢到什麼都沒有………….)</p>
+<p>馬的 那位 Oxx 真的很沒品，創建了一個會記 Log 但不會清 Log 的系統。<br>而且這個系統還他媽的沒有管理辦法…………..</p>
+<p>那個時候樓下某科要辦活動需要頁面………..<br>直接用 Sharepoint 創建了一個頁面…………….</p>
+<p>然後 log 開始每二個月要清一次……<br>接下來因為沒辦法管這個系統，也不希望再投入更多資金去維護這個系統<br>就希望下架這個系統…………</p>
+<p>然後我覺得 E 前輩最靠杯的地方來了，因為她有上過 sharepoint 的課，<br>理應知道 sharepoint 的權限控管要如何拔掉……..<br>但她從不覺得要聽經理的話把那些權限拔掉……<br>然後就一直裝傻到她調去樓下。</p>
+<p>我當然要拔權限讓這個失控的系統下架<br>結果拔拔拔拔到會議室租借功能 xd<br>然後大家都打去她那裏反應問題<br>她就憑記憶把權限加回去…………….<br>然後寄了一封信給經理和打電話給她的人說是我用壞的 xD<br>事實確實是如此(我把頂層權限拔掉了，會議室功能依附在頂層權限上面)，<br>但是一個大公司可以讓一個到職 4 個月(非本科菜鳥)的人癱瘓會議室租借功能絕對可以上新聞了吧。<br>→ P 經理繼續裝傻</p>
+<p>反正那時覺得我他媽就跟他拚了，最糟就是拿資遣單。</p>
+<h2 id="我的難點"><a href="#我的難點" class="headerlink" title="我的難點"></a>我的難點</h2><p>然後我們的 P 經理在我寄信給還在使用系統的人後，開始幫忙打電話給各個部門(經理永不跑第一，也不說去做、不要去做等需要負責的事)…..<br>簡述一下(我看到的)P 經理立場:<br>年資 22 年，一畢業就在這裡工作，是第一份工作也應該是最後一份工作。<br>一開始用 Fortran (打紙卡寫程式)，一路到了今天這個職位，他只想保住他的位子和面子。</p>
+<p>覺得很佩服經理的脾氣，看他被其他科經理和協理當狗數落就覺得他很可憐…….<br>而且我一直覺得經理很細心、講話也很幽默…..(但心機很重)<br>照理來說我們科的技術長應該要挺他，可是沒有，常常會聽到技術長在背後數落經理…….<br>我覺得我們科是沒救了拉 哈<br>高層不支持高層<br>低層不體諒高層</p>
+<p>那整個氛圍對我來說呢?<br>技術長在新人培訓的時候對我很好，總會關心我寫到哪裡寫的如何、給關鍵字….<br>我覺得會想變得跟他一樣厲害<br>經理會想替我著想(僅限於你對他是「有用的」狀態，基本上他就是一個沒 PM 功能、沒長官功能的人)<br>帶我的前輩很嚴格也很有原則(但被公司扭曲到心態很糟)</p>
+<p>人們看起來都很好<br>但是為什麼兜起來會亂七八糟的?(主因應該是因為大家都沒事做，閒到每個人都在鬥薪水)…….</p>
+<p>我們的 line 群組有兩個，一個有經理一個沒經理…..<br>我們前輩叫我不用去自學東西，公司都會讓你學…..</p>
+<p>我…<br>當初好希望公司有讀書會、大家熱愛討論新技術，每天都可以寫程式碼。<br>但是公司最需要的是會跟人吵架的人、在冗長的流程裡不失去自我的人、懂得法律保護自己的人…….<br>經理因為沒有跟時勢充實自己，變成遇到事就把問題推給別人、從不自己做決定的雞掰人，<br>而且他還會說他以前過得有多好……..<br>可憐之人必有可惡之處。</p>
+<p>看起來前輩如果繼續被動等公司給東西，以後也會變得跟經理一樣，<br>但是他們最喜歡抱怨經理。</p>
+<p>我覺得他們很矛盾，明明行為跟經理一樣，又一直罵經理。<br>一直抱怨薪水低，但又不敢投履歷出去面試。</p>
+<p>雖然我很討厭經理，討厭抱經理狗腿的人。<br>(經理從不關心我們專案時程，照理來說經理就如同專案經理 PM，要負責時程掌控、檢討、預算控管)<br>舉例來說，跟 K 組長和 J 組員一起做一個專案，我是中間加入的，<br>J 組員有一個月時間可以看 xUnit 和 nSubstitute 是啥，但她沒有….<br>要開始寫測試了，她連環境都架不起來，<br>我在水深火熱她還一直來拿我滑鼠，然後連 git push 都不會就算了，但她完全不想學 QQ<br>經過這次事件我想表達:我真的不比資管(沒熱誠)的人還差….</p>
+<p>但是那次 PMD 約談 P 經理跟我說:你覺得 J 怎樣?M 怎樣?<br>完全沒問我怎樣…..當時就覺得這個團隊是不是有病，完全沒人在意做好的系統，<br>沒有事後檢討、沒有事前詳細的系統使用者調查、沒有時程安排。<br>讓我覺得非常難過，根本沒人在想到最前線用這系統的行員他們的使用狀況如何….</p>
+<p>那陣子，J 問我薪水多少，T 也問我薪水多少<br>剛來公司不久 B 也問我薪水多少</p>
+<p>你們他媽只在乎薪水的話怎麼還留在這裡???????????????????????</p>
+<p>馬的超噁心，還有人直接嘴經理不懂技術。</p>
+<p>是不是有病???????????????????????????????????????<br>(連國小生都會寫程式，你他媽在跩三小?????)</p>
+<p>幹……………..</p>
+<p>好離題ㄌ，<br>繼續回來講 Sharepoint<br>現在已經把系統使用者精簡到只剩下釘子戶 xdddd<br>等金控那邊的會議室和雲端建置好….<br>就可以下架這個系統了~</p>
+<h4 id="所以交接後我做了什麼"><a href="#所以交接後我做了什麼" class="headerlink" title="所以交接後我做了什麼?"></a>所以交接後我做了什麼?</h4><ol>
+<li>將手動刪 log 改成執行批次檔刪 log。<br>本想排程刪 log 但是申請作業流程太麻煩而作罷。(你要改個東西，要跟人報告還要求別人幫你改，他不會你還要指導他，真不懂為啥不讓我自己來就好????)</li>
+<li>整理出 server 位置(因為 online office server 壞掉，整個系統架構還是一團謎… 因為 sharepoint 是網管幫忙搭建的….. 但出問題網管會說這是你負責ㄉ系統只有你知道~)</li>
+<li>去看儲存容量設定，然後寄信跟經理講不用擔心。(因為他一直來問，我沒上過課但是還是有去翻找答案…..我覺得 E 前輩應該有做些設定，但她都不講，就讓經理空擔心)</li>
+<li>接下來要修補漏洞(TLS1.0 和 SMB 希望可以成功不出錯 QQ)</li>
+<li>嘗試去看使用者流量，發現最多只有一個月內哪個行編的人做了幾次請求的統計資料。(你還要自己去翻職員簿是不是有病?==可是有比沒有好啦….)</li>
+</ol>
+<h4 id="經理做了什麼"><a href="#經理做了什麼" class="headerlink" title="經理做了什麼?"></a>經理做了什麼?</h4><p>經理只會出張嘴，表示他很擔心，以免出事可以說他之前就有提醒，不是他的問題~</p>
+<p>本想年後離職，但是跟爸爸聊完覺得還是 8 月再離比較妥當 xdd<br>總之先開履歷。<br>而且我爸說: 為什麼不是他們先滾，而是你先走?<br>仔細想想也是。</p>
+<p>保持距離，笑臉迎人，增強自己實力。讓他們氣死。</p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><ol>
+<li>sharepoint 的系統架構當初建置時應該要有紀錄(但沒有)<br>好險在 aws 上有提供架構圖可以參考…</li>
+<li>我們公司部門將開發與網管分開<br>但是管理 sharepoint 需要開發與網管同時進行….<br>也就是說要有網管的權限才能用正常的 GUI 設定這個系統…<br>但身為開發者，很多權限都沒有，導致很多東西都無法設定…</li>
+<li>管理權限不易，因為只要那個子網域的管理者沒讓你進去看你的網頁，<br>你就什麼都看不到(檔案、頁面、在裡面如何使用該網域)，<br>所以如果要制定管理辦法，要請該子網域使用者定期回報使用權限狀態、使用容量。</li>
+<li>讓接手的人(我完全沒經驗)心理汙染非常嚴重: E 前輩很愛抱怨 P 經理，然後說她自己有多厲害: Oxx 只跟他說 sharepoint 放在哪…其他都她自己摸出來的，<br>最可怕的是他還會跟其他同事抱怨我如何處理，不過時間久了就知道了，我是不齒跟這種不敢直接跟我說的人為伍拉。<br>(雖然有去上過課不是 E 前輩應該會要管理此系統的理由，但是 E 前輩交接東西的口氣真的還蠻靠杯爛的，更重要的是，我不相信全部是她自己摸出來的拉，哈哈)</li>
+<li>為什麼大家都靜默? 因為這樣會得罪人，他們以後還要在這裡慢慢往上爬…………..</li>
+</ol>
+<p>因為要查 sharepoint 東西意外發現<a href="http://www3.sips.ntpc.edu.tw/wordpress/" target="_blank" rel="noopener">向雲暉老師的溪洲資訊誌</a>，應該是經過此事件之後的一絲暖流 QQ<br>我希望? 希望可以變強，然後以後要是有要做系統，管理辦法和架構圖一定都要有紀錄，不然後面接的人很可憐，超可憐，發生錯誤卻不知道要從哪開始是非常絕望的…<br>最後我覺得我們公司拆成網管和開發完全不適用 sharepoint 拉，幹，浪費我時間。<br>然後呢? 如果有機會一定要離開這個鳥地方~(不在乎使用者的爛地方，連自己的行員都不想顧好還顧得好顧客我是不相信拉)<br>那資訊部門的人的需求呢? 馬的 資訊人用 devops 好嗎? 規格書也能版控阿 QQ<br>然後我覺得上層的人腦袋一定有問題啦，自己招進來的人能力不行就算了還招到沒熱誠的….(因為他們自己就是沒熱誠的)<br>最好笑的是 P 經理還跟我抱怨誰誰誰不 ok，那不是你自己招進來的人嗎?讓他跟上團隊是你的責任吧?<br>你這樣見不得別人好還抱怨別人不好，那你到底要怎樣?(你只要面子跟位子哈哈哈 xDD)</p>
+<p>在背後說人閒話我是不會做的，專注在眼前的事業吧，加油^^</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/20210109/tag0109-2021.html" rel="next" title="tag0109-2021">
+                <i class="fa fa-chevron-left"></i> tag0109-2021
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.jpg" alt="naomi">
+            
+              <p class="site-author-name" itemprop="name">naomi</p>
+              <div class="site-description motion-element" itemprop="description">油 斷 大 敵 (揮木刀)<br>這裡是寫給自己看的筆記<br>小心使用</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">文章</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/blog/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分類</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/blog/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">標籤</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的難點"><span class="nav-number">2.</span> <span class="nav-text">我的難點</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#所以交接後我做了什麼"><span class="nav-number">2.0.1.</span> <span class="nav-text">所以交接後我做了什麼?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#經理做了什麼"><span class="nav-number">2.0.2.</span> <span class="nav-text">經理做了什麼?</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#小結"><span class="nav-number">3.</span> <span class="nav-text">小結</span></a></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">naomi</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/blog/js/utils.js?v=7.1.1"></script>
+
+  <script src="/blog/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/blog/js/scrollspy.js?v=7.1.1"></script>
+<script src="/blog/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
